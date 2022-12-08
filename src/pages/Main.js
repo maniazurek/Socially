@@ -1,10 +1,17 @@
 import React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
+import Feed from "../components/Feed";
+import Messages from "../components/Messages";
+import People from "../components/People";
+import Profile from "../components/Profile";
 
 const Main = () => {
   return (
     <>
-      <div>Main</div>
+      <Feed />
+      <Messages />
+      <People />
+      <Profile />
       <BottomNavigation></BottomNavigation>
     </>
   );

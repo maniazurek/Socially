@@ -13,7 +13,7 @@ const SignIn = () => {
 
   useEffect(() => {
     if (userLogin) {
-      navigate("/main");
+      navigate("/");
     }
   }, [userLogin]);
 
@@ -23,26 +23,32 @@ const SignIn = () => {
   };
 
   return (
-    <>
-      <div>Welcome to</div>
-      <h2>Socially</h2>
-      <form onSubmit={onFormSubmit}>
+    <div className="container">
+      <p className="container_paragraph">Welcome to</p>
+      <h2 className="container_header">Socially</h2>
+      <form onSubmit={onFormSubmit} className="container_form">
         <input
+          className="container_form-element"
           type="text"
           placeholder="Login"
           value={logInForm}
           onChange={(event) => setLogInForm(event.target.value)}
         />
         <input
+          className="container_form-element"
           type="password"
           placeholder="Password"
           value={passwordForm}
           onChange={(event) => setPasswordForm(event.target.value)}
         />
-        <button type="submit">Login</button>
+        <div className="container_form-button__container">
+          <button className="container_form-button" type="submit">
+            Register
+          </button>
+        </div>
       </form>
-      <p>Or sign up</p>
-    </>
+      <p className="container_paragraph">Or sign up</p>
+    </div>
   );
 };
 
