@@ -140,6 +140,10 @@ code {
   padding: 0 24px;
   background-color: #ffffff;
   margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container_paragraph {

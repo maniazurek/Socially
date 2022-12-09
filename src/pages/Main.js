@@ -14,6 +14,7 @@ import {
 } from "@mui/icons-material";
 import { Paper } from "@mui/material";
 import { useNavigate } from "react-router";
+import AddPost from "../components/AddPost";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -31,8 +32,9 @@ const Main = () => {
       </header>
       {/* <Feed /> */}
       {/* <Messages /> */}
+      <AddPost />
       {/* <People /> */}
-      <Profile />
+      {/* <Profile /> */}
       <Paper
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
         elevation={5}
