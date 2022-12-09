@@ -17,10 +17,15 @@ import { Paper } from "@mui/material";
 const Main = () => {
   return (
     <>
+      <header className="header">
+        <div className="header_element-back"></div>
+        <h2 className="header_element-logo">Socially</h2>
+        <div className="header_element-logout"></div>
+      </header>
       <Feed />
-      <Messages />
+      {/* <Messages />
       <People />
-      <Profile />
+      <Profile /> */}
       <Paper
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
         elevation={5}
