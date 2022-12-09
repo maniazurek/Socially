@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile = () => {
+const SingleProfile = () => {
   return (
     <div className="container_layout">
       <div className="container_profile-info">
@@ -41,4 +41,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default SingleProfile;

@@ -424,3 +424,9 @@ code {
   background-repeat: no-repeat;
   border-radius: 19px;
 }
+
+.background_layout {
+  background-image: url(../src/utils/rectangle.svg);
+  width: 465px;
+  height: 465px;
+}
