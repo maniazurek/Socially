@@ -13,6 +13,10 @@ const Feed = () => {
               <p className="element_details-paragraph">2 hrs ago</p>
             </div>
           </div>
+          <div className="likes_container">
+            <div className="likes_img"></div>
+            <p className="likes_counter">12</p>
+          </div>
         </div>
         <div className="section_container-element">
           <div className="element_details-container">
@@ -22,7 +26,11 @@ const Feed = () => {
               <p className="element_details-paragraph">2 hrs ago</p>
             </div>
           </div>
-        </div>{" "}
+          <div className="likes_container">
+            <div className="likes_img"></div>
+            <p className="likes_counter">12</p>
+          </div>
+        </div>
         <div className="section_container-element">
           <div className="element_details-container">
             <div className="element_details-img"></div>
@@ -31,7 +39,11 @@ const Feed = () => {
               <p className="element_details-paragraph">2 hrs ago</p>
             </div>
           </div>
-        </div>{" "}
+          <div className="likes_container">
+            <div className="likes_img"></div>
+            <p className="likes_counter">12</p>
+          </div>
+        </div>
         <div className="section_container-element">
           <div className="element_details-container">
             <div className="element_details-img"></div>
@@ -40,7 +52,11 @@ const Feed = () => {
               <p className="element_details-paragraph">2 hrs ago</p>
             </div>
           </div>
-        </div>{" "}
+          <div className="likes_container">
+            <div className="likes_img"></div>
+            <p className="likes_counter">12</p>
+          </div>
+        </div>
         <div className="section_container-element">
           <div className="element_details-container">
             <div className="element_details-img"></div>
@@ -48,6 +64,23 @@ const Feed = () => {
               <p className="element_details-profile">Dennis Reynolds</p>
               <p className="element_details-paragraph">2 hrs ago</p>
             </div>
+          </div>
+          <div className="likes_container">
+            <div className="likes_img"></div>
+            <p className="likes_counter">12</p>
+          </div>
+        </div>
+        <div className="section_container-element">
+          <div className="element_details-container">
+            <div className="element_details-img"></div>
+            <div className="element_details">
+              <p className="element_details-profile">Dennis Reynolds</p>
+              <p className="element_details-paragraph">2 hrs ago</p>
+            </div>
+          </div>
+          <div className="likes_container">
+            <div className="likes_img"></div>
+            <p className="likes_counter">12</p>
           </div>
         </div>
       </div>

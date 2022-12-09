@@ -30,8 +30,8 @@ const Main = () => {
         <div className="header_element-logout"></div>
       </header>
       <Feed />
-      {/* <Messages />
-      <People />
+      <Messages />
+      {/* <People />
       <Profile /> */}
       <Paper
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}

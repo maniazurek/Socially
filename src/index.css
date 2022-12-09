@@ -117,6 +117,7 @@ code {
   box-shadow: 0px 7px 20px #c4c4c4;
   border-radius: 20px;
   margin-top: 32px;
+  position: relative;
 }
 
 .container_form {
@@ -197,4 +198,37 @@ code {
 
 .element_details {
   margin-left: 7.14px;
+}
+
+.likes_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(229, 229, 229, 0.4);
+  backdrop-filter: blur(3px);
+  border-radius: 35px;
+  width: 70.43px;
+  height: 27.16px;
+  gap: 3.67px;
+  position: absolute;
+  bottom: 14.93px;
+  left: 41%;
+}
+
+.likes_img {
+  background-image: url(../src/utils/like.svg);
+  background-position: center;
+  width: 16.67px;
+  height: 15.29px;
+  color: #ffffff;
+}
+
+.likes_counter {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #ffffff;
+  margin: 0;
 }
