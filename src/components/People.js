@@ -6,7 +6,10 @@ const People = () => {
       <h3 className="section_heading">People</h3>
       <div className="section_container">
         <div className="section_container-message__profile">
-          <div className="element_details-message">
+          <div
+            className="element_details-message"
+            style={{ justifyContent: "space-between" }}
+          >
             <div className="element_details-info">
               <div className="element_details-img-border">
                 <div className="element_details-img__profile"></div>
@@ -17,7 +20,10 @@ const People = () => {
           </div>
         </div>
         <div className="section_container-message__profile">
-          <div className="element_details-message">
+          <div
+            className="element_details-message"
+            style={{ justifyContent: "space-between" }}
+          >
             <div className="element_details-info">
               <div className="element_details-img-border">
                 <div className="element_details-img__profile"></div>
@@ -26,9 +32,12 @@ const People = () => {
             </div>
             <p className="element_details-text">Follow</p>
           </div>
-        </div>
+        </div>{" "}
         <div className="section_container-message__profile">
-          <div className="element_details-message">
+          <div
+            className="element_details-message"
+            style={{ justifyContent: "space-between" }}
+          >
             <div className="element_details-info">
               <div className="element_details-img-border">
                 <div className="element_details-img__profile"></div>
@@ -37,9 +46,12 @@ const People = () => {
             </div>
             <p className="element_details-text">Follow</p>
           </div>
-        </div>
+        </div>{" "}
         <div className="section_container-message__profile">
-          <div className="element_details-message">
+          <div
+            className="element_details-message"
+            style={{ justifyContent: "space-between" }}
+          >
             <div className="element_details-info">
               <div className="element_details-img-border">
                 <div className="element_details-img__profile"></div>
@@ -48,9 +60,26 @@ const People = () => {
             </div>
             <p className="element_details-text">Follow</p>
           </div>
-        </div>
+        </div>{" "}
         <div className="section_container-message__profile">
-          <div className="element_details-message">
+          <div
+            className="element_details-message"
+            style={{ justifyContent: "space-between" }}
+          >
+            <div className="element_details-info">
+              <div className="element_details-img-border">
+                <div className="element_details-img__profile"></div>
+              </div>
+              <p className="element_details-name">Malena Tudi</p>
+            </div>
+            <p className="element_details-text">Follow</p>
+          </div>
+        </div>{" "}
+        <div className="section_container-message__profile">
+          <div
+            className="element_details-message"
+            style={{ justifyContent: "space-between" }}
+          >
             <div className="element_details-info">
               <div className="element_details-img-border">
                 <div className="element_details-img__profile"></div>

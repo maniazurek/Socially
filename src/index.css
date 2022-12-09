@@ -140,10 +140,6 @@ code {
   padding: 0 24px;
   background-color: #ffffff;
   margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .container_paragraph {
@@ -292,7 +288,6 @@ code {
   align-items: center;
   padding: 20px 17px;
   gap: 17px;
-  justify-content: space-between;
 }
 
 .element_details-info {
@@ -403,6 +398,13 @@ code {
   color: #000000;
   margin-top: 5.75px;
   margin-bottom: 0;
+}
+
+.section_container-addpost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile_content-posts {

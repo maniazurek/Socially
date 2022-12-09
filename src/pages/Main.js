@@ -30,9 +30,9 @@ const Main = () => {
         <h2 className="header_element-logo">Socially</h2>
         <div className="header_element-logout"></div>
       </header>
-      {/* <Feed /> */}
+      <Feed />
       {/* <Messages /> */}
-      <AddPost />
+      {/* <AddPost /> */}
       {/* <People /> */}
       {/* <Profile /> */}
       <Paper
