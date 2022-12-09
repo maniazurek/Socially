@@ -76,6 +76,7 @@ code {
   background-color: #ffffff;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .header_element-logo {
@@ -168,12 +169,17 @@ code {
   align-items: center;
   padding-left: 13.08px;
   padding-top: 13.58px;
+  gap: 7.14px;
 }
 
 .element_details-img {
-  background-image: url(../src/utils/profile.svg);
-  width: 37.23px;
-  height: 35.89px;
+  background-image: url(../src/utils/profile.jpg);
+  width: 37px;
+  height: 37px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position: center;
 }
 
 .element_details-profile {
@@ -194,10 +200,6 @@ code {
   font-size: 12.8px;
   line-height: 19px;
   color: #d8d8d8;
-}
-
-.element_details {
-  margin-left: 7.14px;
 }
 
 .likes_container {
@@ -231,4 +233,59 @@ code {
   line-height: 19px;
   color: #ffffff;
   margin: 0;
+}
+
+.section_container-message__profile {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 33px;
+  margin-top: 16px;
+}
+
+.element_details-img-border {
+  border: 1px solid #000000;
+  border-radius: 35px;
+  width: 66.54px;
+  height: 68.42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.element_details-img__profile {
+  background-image: url(../src/utils/profile.jpg);
+  width: 62px;
+  height: 62px;
+  border-radius: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.element_details-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #000000;
+  margin: 0;
+}
+
+.element_details-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #656565;
+  margin-top: 9px;
+  margin-bottom: 0;
+}
+
+.element_details-message {
+  display: flex;
+  align-items: center;
+  padding: 20px 17px;
+  gap: 17px;
 }
