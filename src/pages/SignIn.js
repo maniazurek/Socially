@@ -23,7 +23,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container_form">
       <p className="container_paragraph">Welcome to</p>
       <h2 className="container_title">Socially</h2>
       <form onSubmit={onFormSubmit} className="container_form">
