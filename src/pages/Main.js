@@ -13,12 +13,19 @@ import {
   AccountCircle,
 } from "@mui/icons-material";
 import { Paper } from "@mui/material";
+import { useNavigate } from "react-router";
 
 const Main = () => {
+  const navigate = useNavigate();
+
+  const onPreviousPage = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <header className="header">
-        <div className="header_element-back"></div>
+        <div className="header_element-back" onClick={onPreviousPage}></div>
         <h2 className="header_element-logo">Socially</h2>
         <div className="header_element-logout"></div>
       </header>

@@ -129,6 +129,7 @@ code {
 .container_layout {
   padding: 0 24px;
   background-color: #ffffff;
+  margin-bottom: 100px;
 }
 
 .container_paragraph {
