@@ -288,4 +288,12 @@ code {
   align-items: center;
   padding: 20px 17px;
   gap: 17px;
+  justify-content: space-between;
+}
+
+.element_details-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
