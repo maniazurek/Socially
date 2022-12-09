@@ -126,6 +126,14 @@ code {
   background-color: #ffffff;
 }
 
+.container_data {
+  margin-top: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container_layout {
   padding: 0 24px;
   background-color: #ffffff;

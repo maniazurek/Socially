@@ -26,7 +26,7 @@ const SignIn = () => {
     <div className="container_form">
       <p className="container_paragraph">Welcome to</p>
       <h2 className="container_title">Socially</h2>
-      <form onSubmit={onFormSubmit} className="container_form">
+      <form onSubmit={onFormSubmit} className="container_data">
         <input
           className="container_form-element"
           type="text"
@@ -46,8 +46,8 @@ const SignIn = () => {
             Register
           </button>
         </div>
+        <p className="container_paragraph">Or sign up</p>
       </form>
-      <p className="container_paragraph">Or sign up</p>
     </div>
   );
 };
