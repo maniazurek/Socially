@@ -161,3 +161,40 @@ code {
   color: #000000;
   text-align: center;
 }
+
+.element_details-container {
+  display: flex;
+  align-items: center;
+  padding-left: 13.08px;
+  padding-top: 13.58px;
+}
+
+.element_details-img {
+  background-image: url(../src/utils/profile.svg);
+  width: 37.23px;
+  height: 35.89px;
+}
+
+.element_details-profile {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.element_details-paragraph {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #d8d8d8;
+}
+
+.element_details {
+  margin-left: 7.14px;
+}
