@@ -73,7 +73,7 @@ code {
   align-items: center;
   justify-content: space-between;
   padding: 34px 25px 42px 25px;
-  background-color: #ffffff;
+  background-color: transparent;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -296,4 +296,125 @@ code {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.container_profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_profile-img {
+  width: 86px;
+  height: 86px;
+  border: 1px solid #000000;
+  border-radius: 35px;
+  padding: 5px;
+  transform: rotate(45deg);
+  overflow: hidden;
+}
+
+.container_profile-img__border {
+  height: 100%;
+  width: 100%;
+  border-radius: 35px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.container_profile-img__picture {
+  width: 120%;
+  height: 120%;
+  background-image: url(../src/utils/profile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(-45deg);
+  position: relative;
+  top: -5px;
+  left: -10px;
+}
+
+.profile_heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 38px;
+  color: #000000;
+  margin-top: 6px;
+  margin-bottom: 4.2px;
+}
+
+.profile_nick {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4e4e4e;
+  margin-top: 0;
+  margin-bottom: 17.8px;
+}
+
+.profile_message {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #656565;
+  margin: 0;
+}
+
+.profile_content-info {
+  display: flex;
+  margin-top: 41px;
+  gap: 50px;
+  justify-content: center;
+}
+
+.profile_content-info__element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile_content-heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #656565;
+  margin: 0;
+}
+
+.profile_content-counter {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 38px;
+  color: #000000;
+  margin-top: 5.75px;
+  margin-bottom: 0;
+}
+
+.profile_content-posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 14.68px;
+  row-gap: 17.64px;
+  margin-top: 45px;
+}
+
+.profile_content-post {
+  background-image: url(../src/utils/post.jpeg);
+  width: 156px;
+  height: 137px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 19px;
 }

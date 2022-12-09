@@ -31,8 +31,8 @@ const Main = () => {
       </header>
       {/* <Feed /> */}
       {/* <Messages /> */}
-      <People />
-      {/* <Profile /> */}
+      {/* <People /> */}
+      <Profile />
       <Paper
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
         elevation={5}
