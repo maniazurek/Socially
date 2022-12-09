@@ -75,11 +75,26 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 34px 25px 42px 25px;
+  padding: 25px;
   background-color: transparent;
   position: sticky;
   top: 0;
   z-index: 1;
+  margin: 17px 8px 8px 8px;
+}
+
+.custom_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #e1f6f4;
+  border-radius: 34px;
+  margin: 17px 8px 8px 8px;
 }
 
 .header_element-logo {
@@ -89,6 +104,7 @@ code {
   font-size: 16px;
   line-height: 24px;
   color: #000000;
+  margin: 0;
 }
 
 .header_element-back {

@@ -30,8 +30,8 @@ const Main = () => {
   };
 
   const onLogOut = () => {
-    navigate("/signin")
-  }
+    navigate("/signin");
+  };
 
   const generateIconColor = (icon) => {
     if (location.pathname === "/" && icon === "feed") {
@@ -49,24 +49,30 @@ const Main = () => {
     }
   };
 
+  const generateHeader = () => {
+    if (location.pathname === "/messages/:userId") {
+      return "custom_header";
+    } else {
+      return "header";
+    }
+  };
+
   return (
     <>
-      <header className="header">
+      <header className={generateHeader()}>
         <div className="header_element-back" onClick={onPreviousPage}></div>
         <h2 className="header_element-logo">Socially</h2>
         <div className="header_element-logout" onClick={onLogOut}></div>
       </header>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Feed />} />
         <Route path="/messages" element={<Messages />} />
-        <Route path="/messages/:userId" element={<SingleMessage />}/>
+        <Route path="/messages/:userId" element={<SingleMessage />} />
         <Route path="/addpost" element={<AddPost />} />
         <Route path="/people" element={<People />} />
-        <Route path="/people/:userId" element={<SingleProfile />}/>
+        <Route path="/people/:userId" element={<SingleProfile />} />
         <Route path="/myprofile" element={<MyProfile />} />
-      </Routes> */}
-
-      <SingleMessage />
+      </Routes>
 
       <Paper
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
