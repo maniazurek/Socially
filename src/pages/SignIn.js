@@ -23,32 +23,36 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container_form">
-      <p className="container_paragraph">Welcome to</p>
-      <h2 className="container_title">Socially</h2>
-      <form onSubmit={onFormSubmit} className="container_data">
-        <input
-          className="container_form-element"
-          type="text"
-          placeholder="Login"
-          value={logInForm}
-          onChange={(event) => setLogInForm(event.target.value)}
-        />
-        <input
-          className="container_form-element"
-          type="password"
-          placeholder="Password"
-          value={passwordForm}
-          onChange={(event) => setPasswordForm(event.target.value)}
-        />
-        <div className="container_form-button__container">
-          <button className="container_form-button" type="submit">
-            Register
-          </button>
-        </div>
-        <p className="container_paragraph">Or sign up</p>
-      </form>
-    </div>
+    <>
+      <div className="background_rectangle"></div>
+      <div className="background_border"></div>
+      <div className="container_form">
+        <p className="container_paragraph">Welcome to</p>
+        <h2 className="container_title">Socially</h2>
+        <form onSubmit={onFormSubmit} className="container_data">
+          <input
+            className="container_form-element"
+            type="text"
+            placeholder="Login"
+            value={logInForm}
+            onChange={(event) => setLogInForm(event.target.value)}
+          />
+          <input
+            className="container_form-element"
+            type="password"
+            placeholder="Password"
+            value={passwordForm}
+            onChange={(event) => setPasswordForm(event.target.value)}
+          />
+          <div className="container_form-button__container">
+            <button className="container_form-button" type="submit">
+              Register
+            </button>
+          </div>
+          <p className="container_paragraph">Or sign up</p>
+        </form>
+      </div>
+    </>
   );
 };
 

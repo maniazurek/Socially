@@ -16,11 +16,14 @@ code {
 }
 
 .container_form {
-  margin-top: 47px;
+  margin-top: 192px;
+  margin-bottom: 177px;
+  padding: 0 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
 
 .container_form-element {
@@ -121,13 +124,6 @@ code {
   position: relative;
 }
 
-.container_form {
-  margin-top: 192px;
-  margin-bottom: 177px;
-  padding: 0 24px;
-  background-color: #ffffff;
-}
-
 .container_data {
   margin-top: 43px;
   display: flex;
@@ -138,7 +134,7 @@ code {
 
 .container_layout {
   padding: 0 24px;
-  background-color: #ffffff;
+  background-color: transparent;
   margin-bottom: 100px;
 }
 
@@ -429,4 +425,42 @@ code {
   background-image: url(../src/utils/rectangle.svg);
   width: 465px;
   height: 465px;
+}
+
+.background_rectangle {
+  background-image: url(../src/utils/rectangle-blue-signin.svg);
+  width: 680px;
+  height: 470px;
+  position: absolute;
+  z-index: -1;
+  top: -69px;
+  left: -173px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.background_border {
+  background-image: url(../src/utils/rectangle-border-signin.svg);
+  width: 793px;
+  height: 605px;
+  position: absolute;
+  z-index: -1;
+  top: -142px;
+  left: -279px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.single_message {
+  background-color: #fafafa;
+  color: #656565;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  padding: 11px 25px;
+  border-radius: 0 25px 25px 25px;
+  margin-bottom: 16px;
+  width: fit-content;
 }

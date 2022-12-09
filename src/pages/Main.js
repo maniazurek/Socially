@@ -56,7 +56,7 @@ const Main = () => {
         <h2 className="header_element-logo">Socially</h2>
         <div className="header_element-logout" onClick={onLogOut}></div>
       </header>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Feed />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/messages/:userId" element={<SingleMessage />}/>
@@ -64,7 +64,9 @@ const Main = () => {
         <Route path="/people" element={<People />} />
         <Route path="/people/:userId" element={<SingleProfile />}/>
         <Route path="/myprofile" element={<MyProfile />} />
-      </Routes>
+      </Routes> */}
+
+      <SingleMessage />
 
       <Paper
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
