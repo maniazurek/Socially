@@ -109,13 +109,13 @@ code {
 }
 
 .header_element-back {
-  background-image: url(../src/utils/back.svg);
+  background-image: url(../src/assets/back.svg);
   width: 19.71px;
   height: 19.71px;
 }
 
 .header_element-logout {
-  background-image: url(../src/utils/logout.svg);
+  background-image: url(../src/assets/logout.svg);
   width: 24px;
   height: 24px;
 }
@@ -186,7 +186,7 @@ code {
 }
 
 .element_details-img {
-  background-image: url(../src/utils/profile.jpg);
+  background-image: url(../src/assets/profile.jpg);
   width: 37px;
   height: 37px;
   background-size: cover;
@@ -231,7 +231,7 @@ code {
 }
 
 .likes_img {
-  background-image: url(../src/utils/like.svg);
+  background-image: url(../src/assets/like.svg);
   background-position: center;
   width: 16.67px;
   height: 15.29px;
@@ -266,7 +266,7 @@ code {
 }
 
 .element_details-img__profile {
-  background-image: url(../src/utils/profile.jpg);
+  background-image: url(../src/assets/profile.jpg);
   width: 62px;
   height: 62px;
   border-radius: 35px;
@@ -338,7 +338,7 @@ code {
 .container_profile-img__picture {
   width: 120%;
   height: 120%;
-  background-image: url(../src/utils/profile.jpg);
+  background-image: url(../src/assets/profile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   transform: rotate(-45deg);
@@ -429,7 +429,7 @@ code {
 }
 
 .profile_content-post {
-  background-image: url(../src/utils/post.jpeg);
+  background-image: url(../src/assets/post.jpeg);
   width: 156px;
   height: 137px;
   background-position: center;
@@ -439,13 +439,13 @@ code {
 }
 
 .background_layout {
-  background-image: url(../src/utils/rectangle.svg);
+  background-image: url(../src/assets/rectangle.svg);
   width: 465px;
   height: 465px;
 }
 
 .background_rectangle {
-  background-image: url(../src/utils/rectangle-blue-signin.svg);
+  background-image: url(../src/assets/rectangle-blue-signin.svg);
   width: 680px;
   height: 470px;
   position: absolute;
@@ -457,7 +457,7 @@ code {
 }
 
 .background_border {
-  background-image: url(../src/utils/rectangle-border-signin.svg);
+  background-image: url(../src/assets/rectangle-border-signin.svg);
   width: 793px;
   height: 605px;
   position: absolute;

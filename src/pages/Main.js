@@ -68,57 +68,58 @@ const Main = () => {
         <div className="header_element-logout" onClick={onLogOut}></div>
       </header>
       <Routes>
-        <Route path="/" element={<Feed />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/messages/:userId" element={<SingleMessage />} />
-        <Route path="/addpost" element={<AddPost />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/people/:userId" element={<SingleProfile />} />
-        <Route path="/myprofile" element={<MyProfile />} />
+        <Route index element={<Feed />} />
+        <Route path="messages" element={<Messages />} />
+        <Route path="messages/:userId" element={<SingleMessage />} />
+        <Route path="addpost" element={<AddPost />} />
+        <Route path="people" element={<People />} />
+        <Route path="people/:userId" element={<SingleProfile />} />
+        <Route path="myprofile" element={<MyProfile />} />
       </Routes>
 
       <Paper
-        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        sx={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          borderRadius: "20px",
+        }}
         elevation={5}
       >
         <Outlet />
         <BottomNavigation>
-          <Link to="/">
-            <BottomNavigationAction
-              label="Feed"
-              icon={<Home htmlColor={generateIconColor("feed")} />}
-            />
-          </Link>
-          <Link to="/messages">
-            <BottomNavigationAction
-              label="Messages"
-              icon={
-                <ChatBubbleOutline htmlColor={generateIconColor("messages")} />
-              }
-            />
-          </Link>
-          <Link to="/addpost">
-            <BottomNavigationAction
-              label="AddPost"
-              icon={
-                <AddCircleOutline htmlColor={generateIconColor("addpost")} />
-              }
-            />
-          </Link>
-          <Link to="/people">
-            <BottomNavigationAction
-              label="People"
-              icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
-            />
-          </Link>
-          <Link to="/myprofile">
-            <BottomNavigationAction
-              label="MyProfile"
-              icon={
-                <AccountCircle htmlColor={generateIconColor("myprofile")} />
-              }
-            />
-          </Link>
+          <BottomNavigationAction
+            to="/"
+            component={Link}
+            icon={<Home htmlColor={generateIconColor("feed")} />}
+          />
+          <BottomNavigationAction
+            to="/messages"
+            component={Link}
+            label="Messages"
+            icon={
+              <ChatBubbleOutline htmlColor={generateIconColor("messages")} />
+            }
+          />
+          <BottomNavigationAction
+            to="/addpost"
+            component={Link}
+            label="AddPost"
+            icon={<AddCircleOutline htmlColor={generateIconColor("addpost")} />}
+          />
+          <BottomNavigationAction
+            to="/people"
+            component={Link}
+            label="People"
+            icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
+          />
+          <BottomNavigationAction
+            to="/myprofile"
+            component={Link}
+            label="MyProfile"
+            icon={<AccountCircle htmlColor={generateIconColor("myprofile")} />}
+          />
         </BottomNavigation>
       </Paper>
     </>
