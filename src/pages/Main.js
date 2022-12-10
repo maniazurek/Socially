@@ -20,17 +20,20 @@ import { Paper } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Main = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const onPreviousPage = () => {
-    navigate(-1);
+    navigate("/");
+    window.scrollTo(0, 0);
   };
 
   const onLogOut = () => {
     navigate("/signin");
+    window.scrollTo(0, 0);
   };
 
   const generateIconColor = (icon) => {

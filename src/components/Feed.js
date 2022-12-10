@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import feed, { getFeed } from "../reducers/feed";
 
 const Feed = () => {
+  // const posts = useSelector((store) => store.feed.list);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getFeed());
+  // }, []);
+
   return (
     <>
       {/* <div className="background_rectangle"></div> */}
