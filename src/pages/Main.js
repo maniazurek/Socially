@@ -83,38 +83,42 @@ const Main = () => {
       >
         <Outlet />
         <BottomNavigation>
-          <BottomNavigationAction
-            label="Feed"
-            icon={<Home htmlColor={generateIconColor("feed")} />}
-            to="/"
-            component={Link}
-          />
-          <BottomNavigationAction
-            label="Messages"
-            icon={
-              <ChatBubbleOutline htmlColor={generateIconColor("messages")} />
-            }
-            to="/messages"
-            component={Link}
-          />
-          <BottomNavigationAction
-            label="AddPost"
-            icon={<AddCircleOutline htmlColor={generateIconColor("addpost")} />}
-            to="/addpost"
-            component={Link}
-          />
-          <BottomNavigationAction
-            label="People"
-            icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
-            to="/people"
-            component={Link}
-          />
-          <BottomNavigationAction
-            label="MyProfile"
-            icon={<AccountCircle htmlColor={generateIconColor("myprofile")} />}
-            to="/myprofile"
-            component={Link}
-          />
+          <Link to="/">
+            <BottomNavigationAction
+              label="Feed"
+              icon={<Home htmlColor={generateIconColor("feed")} />}
+            />
+          </Link>
+          <Link to="/messages">
+            <BottomNavigationAction
+              label="Messages"
+              icon={
+                <ChatBubbleOutline htmlColor={generateIconColor("messages")} />
+              }
+            />
+          </Link>
+          <Link to="/addpost">
+            <BottomNavigationAction
+              label="AddPost"
+              icon={
+                <AddCircleOutline htmlColor={generateIconColor("addpost")} />
+              }
+            />
+          </Link>
+          <Link to="/people">
+            <BottomNavigationAction
+              label="People"
+              icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
+            />
+          </Link>
+          <Link to="/myprofile">
+            <BottomNavigationAction
+              label="MyProfile"
+              icon={
+                <AccountCircle htmlColor={generateIconColor("myprofile")} />
+              }
+            />
+          </Link>
         </BottomNavigation>
       </Paper>
     </>
