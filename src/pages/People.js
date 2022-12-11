@@ -1,6 +1,16 @@
 import React from "react";
+import { getUsers } from "../reducers/profiles";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const People = () => {
+  const accessToken = useSelector((store) => store.user.accessToken);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers(accessToken));
+  }, []);
+
   return (
     <div className="container_layout">
       <h3 className="section_heading">People</h3>
