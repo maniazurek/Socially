@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import Feed from "../components/Feed";
-import Messages from "../components/Messages";
-import People from "../components/People";
-import MyProfile from "../components/MyProfile";
-import AddPost from "../components/AddPost";
-import SingleMessage from "../components/SingleMessage";
-import SingleProfile from "../components/SingleProfile";
+import Feed from "./Feed";
+import Messages from "./Messages";
+import People from "./People";
+import MyProfile from "./MyProfile";
+import AddPost from "./AddPost";
+import SingleMessage from "./SingleMessage";
+import SingleProfile from "./SingleProfile";
 
 import {
   Home,
@@ -21,6 +21,7 @@ import { useLocation, useNavigate } from "react-router";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import MainButton from "../styled-components/MainButton";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -97,7 +98,6 @@ const Main = () => {
           <BottomNavigationAction
             to="/messages"
             component={Link}
-            label="Messages"
             icon={
               <ChatBubbleOutline htmlColor={generateIconColor("messages")} />
             }
@@ -105,19 +105,16 @@ const Main = () => {
           <BottomNavigationAction
             to="/addpost"
             component={Link}
-            label="AddPost"
             icon={<AddCircleOutline htmlColor={generateIconColor("addpost")} />}
           />
           <BottomNavigationAction
             to="/people"
             component={Link}
-            label="People"
             icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
           />
           <BottomNavigationAction
             to="/myprofile"
             component={Link}
-            label="MyProfile"
             icon={<AccountCircle htmlColor={generateIconColor("myprofile")} />}
           />
         </BottomNavigation>

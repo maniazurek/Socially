@@ -31,9 +31,21 @@ const theme = createTheme({
     MuiBottomNavigation: {
       styleOverrides: {
         root: {
-          padding: "5px 16px 30px 16px",
+          padding: "5px 16px 18px 16px",
           "& .MuiButtonBase-root": {
             minWidth: "57px",
+          },
+          "& .MuiButtonBase-root:nth-child(3)": {
+            backgroundColor: "#000",
+            transform: "rotate(45deg)",
+            borderRadius: "23px",
+            position: "relative",
+            bottom: "15px",
+            padding: "0",
+            "& .MuiSvgIcon-root": {
+              transform: "rotate(-45deg)",
+              fill: "#fff",
+            },
           },
         },
       },

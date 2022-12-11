@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import MainButton from "../styled-components/MainButton";
 
 import user from "../reducers/user";
+import Main from "./Main";
 
-const SignIn = () => {
+const Sign = () => {
   const [logInForm, setLogInForm] = useState("");
   const [passwordForm, setPasswordForm] = useState("");
+  const [mode, setMode] = useState("signin");
   const userLogin = useSelector((store) => store.user.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,6 +23,10 @@ const SignIn = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     dispatch(user.actions.logIn(logInForm));
+  };
+
+  const signChange = () => {
+    setMode("signup");
   };
 
   return (
@@ -44,16 +51,27 @@ const SignIn = () => {
             value={passwordForm}
             onChange={(event) => setPasswordForm(event.target.value)}
           />
-          <div className="container_form-button__container">
-            <button className="container_form-button" type="submit">
-              Register
-            </button>
-          </div>
-          <p className="container_paragraph">Or sign up</p>
+          {mode === "signup" ? (
+            <div className="sign_container">
+              <MainButton type="submit">
+                <span>Register</span>
+              </MainButton>
+              <button onClick={() => setMode("signin")} className="sign_change-mode">
+                Or sign in
+              </button>
+            </div>
+          ) : (
+            <div className="sign_container">
+              <MainButton type="submit">
+                <span>Login</span>
+              </MainButton>
+              <button onClick={() => setMode("signup")} className="sign_change-mode">Or sign up</button>
+            </div>
+          )}
         </form>
       </div>
     </>
   );
 };
 
-export default SignIn;
+export default Sign;

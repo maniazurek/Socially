@@ -24,6 +24,9 @@ code {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container_form-element {
@@ -40,6 +43,7 @@ code {
   line-height: 19px;
   color: #656565;
   padding-left: 25px;
+  margin-bottom: 17px;
 }
 
 .container_form .container_form-element:first-child {
@@ -69,6 +73,13 @@ code {
   border: none;
   transform: rotate(45deg);
   padding: 0;
+}
+
+.sign_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -164,6 +175,21 @@ code {
   line-height: 24px;
   color: #4e4e4e;
   text-align: center;
+  margin-top: 17.4px;
+}
+
+.sign_change-mode {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4e4e4e;
+  text-align: center;
+  margin-top: 17.4px;
+  border: none;
+  background-color: transparent;
 }
 
 .container_title {
