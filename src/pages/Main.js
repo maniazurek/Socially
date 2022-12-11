@@ -18,12 +18,26 @@ import {
 } from "@mui/icons-material";
 import { Paper } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
 const Main = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const accessToken = useSelector((store) => store.user.accessToken);
+
+  useEffect(() => {
+    if (!accessToken) {
+      navigate("/sign");
+    }
+  }, [accessToken]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const onPreviousPage = () => {
     navigate(-1);
