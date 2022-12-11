@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import user, { getUser } from "../reducers/user";
 import { useEffect } from "react";
+import { useState } from "react";
 
 const MyProfile = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
@@ -12,6 +13,9 @@ const MyProfile = () => {
       dispatch(getUser(accessToken));
     }
   }, [accessToken]);
+
+  console.log(user);
+
   return (
     <>
       <div className="container_layout">
