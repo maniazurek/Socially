@@ -1,6 +1,18 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import {getConversations} from "../reducers/conversations"
 
 const Messages = () => {
+  const accessToken = useSelector((store) => store.user.accessToken);
+  const conversationsList = useSelector((store) => store.conversations.list);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (accessToken) {
+      dispatch(getConversations(accessToken));
+    }
+  }, [accessToken]);
   return (
     <div className="container_layout">
       <h3 className="section_heading">Messages</h3>

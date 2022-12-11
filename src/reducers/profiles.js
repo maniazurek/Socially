@@ -25,6 +25,6 @@ export const getUsers = (accessToken) => {
     };
     fetch(`https://socially-api.onrender.com/users`, options)
       .then((res) => res.json())
-      .then((data) => dispatch(profiles.actions.setUsers(data.response.list)));
+      .then((data) => dispatch(profiles.actions.setUsers(data.response)));
   };
 };

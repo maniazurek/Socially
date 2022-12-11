@@ -1,9 +1,19 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import user, { getUser } from "../reducers/user";
+import { useEffect } from "react";
 
 const MyProfile = () => {
+  const accessToken = useSelector((store) => store.user.accessToken);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (accessToken) {
+      dispatch(getUser(accessToken));
+    }
+  }, [accessToken]);
   return (
     <>
-      {/* <div className="background_layout"></div> */}
       <div className="container_layout">
         <div className="container_profile-info">
           <div className="container_profile-img">
@@ -11,7 +21,7 @@ const MyProfile = () => {
               <div className="container_profile-img__picture"></div>
             </div>
           </div>
-          <h4 className="profile_heading">John Doe</h4>
+          <h4 className="profile_heading">{user.name}</h4>
           <p className="profile_nick">@johndoe</p>
           <p className="profile_message">Message</p>
         </div>

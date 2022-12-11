@@ -290,7 +290,6 @@ code {
 }
 
 .element_details-img__profile {
-  background-image: url(../src/assets/profile.jpg);
   width: 62px;
   height: 62px;
   border-radius: 35px;
@@ -318,6 +317,8 @@ code {
   color: #656565;
   margin-top: 9px;
   margin-bottom: 0;
+  border: none;
+  background-color: transparent;
 }
 
 .element_details-message {
@@ -362,7 +363,6 @@ code {
 .container_profile-img__picture {
   width: 120%;
   height: 120%;
-  background-image: url(../src/assets/profile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   transform: rotate(-45deg);

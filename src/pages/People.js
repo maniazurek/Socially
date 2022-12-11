@@ -3,102 +3,35 @@ import { getUsers } from "../reducers/profiles";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
+import PeopleElement from "../components/PeopleElement";
+
 const People = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
+  const peopleList = useSelector((store) => store.profiles.list);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUsers(accessToken));
-  }, []);
+    if (accessToken) {
+      dispatch(getUsers(accessToken));
+    }
+  }, [accessToken]);
 
   return (
     <div className="container_layout">
       <h3 className="section_heading">People</h3>
       <div className="section_container">
-        <div className="section_container-message__profile">
-          <div
-            className="element_details-message"
-            style={{ justifyContent: "space-between" }}
-          >
-            <div className="element_details-info">
-              <div className="element_details-img-border">
-                <div className="element_details-img__profile"></div>
-              </div>
-              <p className="element_details-name">Malena Tudi</p>
-            </div>
-            <p className="element_details-text">Follow</p>
-          </div>
-        </div>
-        <div className="section_container-message__profile">
-          <div
-            className="element_details-message"
-            style={{ justifyContent: "space-between" }}
-          >
-            <div className="element_details-info">
-              <div className="element_details-img-border">
-                <div className="element_details-img__profile"></div>
-              </div>
-              <p className="element_details-name">Malena Tudi</p>
-            </div>
-            <p className="element_details-text">Follow</p>
-          </div>
-        </div>{" "}
-        <div className="section_container-message__profile">
-          <div
-            className="element_details-message"
-            style={{ justifyContent: "space-between" }}
-          >
-            <div className="element_details-info">
-              <div className="element_details-img-border">
-                <div className="element_details-img__profile"></div>
-              </div>
-              <p className="element_details-name">Malena Tudi</p>
-            </div>
-            <p className="element_details-text">Follow</p>
-          </div>
-        </div>{" "}
-        <div className="section_container-message__profile">
-          <div
-            className="element_details-message"
-            style={{ justifyContent: "space-between" }}
-          >
-            <div className="element_details-info">
-              <div className="element_details-img-border">
-                <div className="element_details-img__profile"></div>
-              </div>
-              <p className="element_details-name">Malena Tudi</p>
-            </div>
-            <p className="element_details-text">Follow</p>
-          </div>
-        </div>{" "}
-        <div className="section_container-message__profile">
-          <div
-            className="element_details-message"
-            style={{ justifyContent: "space-between" }}
-          >
-            <div className="element_details-info">
-              <div className="element_details-img-border">
-                <div className="element_details-img__profile"></div>
-              </div>
-              <p className="element_details-name">Malena Tudi</p>
-            </div>
-            <p className="element_details-text">Follow</p>
-          </div>
-        </div>{" "}
-        <div className="section_container-message__profile">
-          <div
-            className="element_details-message"
-            style={{ justifyContent: "space-between" }}
-          >
-            <div className="element_details-info">
-              <div className="element_details-img-border">
-                <div className="element_details-img__profile"></div>
-              </div>
-              <p className="element_details-name">Malena Tudi</p>
-            </div>
-            <p className="element_details-text">Follow</p>
-          </div>
-        </div>
+        {peopleList.map((profile) => (
+          <PeopleElement
+            key={profile._id}
+            userId={profile._id}
+            name={profile.name}
+            login={profile.login}
+            avatar={profile.image}
+            followers={profile.followers}
+            follows={profile.follows}
+          />
+        ))}
+        <PeopleElement />
       </div>
     </div>
   );
