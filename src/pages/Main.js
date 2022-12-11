@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Feed from "./Feed";
@@ -20,20 +20,18 @@ import { Paper } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import MainButton from "../styled-components/MainButton";
 
 const Main = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const onPreviousPage = () => {
-    navigate("/");
+    navigate(-1);
     window.scrollTo(0, 0);
   };
 
   const onLogOut = () => {
-    navigate("/signin");
+    navigate("/sign");
     window.scrollTo(0, 0);
   };
 
