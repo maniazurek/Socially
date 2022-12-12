@@ -34,7 +34,6 @@ const theme = createTheme({
           padding: "5px 16px 18px 16px",
           "& .MuiButtonBase-root": {
             minWidth: "57px",
-            maxWidth: "57px",
           },
           "& .MuiButtonBase-root:nth-child(3)": {
             backgroundColor: "#000",
@@ -43,6 +42,7 @@ const theme = createTheme({
             position: "relative",
             bottom: "15px",
             padding: "0",
+            maxWidth: "57px",
             "& .MuiSvgIcon-root": {
               transform: "rotate(-45deg)",
               fill: "#fff",
