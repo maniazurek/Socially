@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 import { useParams } from "react-router";
 
-const MyProfile = () => {
+const Profile = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
   const user = useSelector((store) => store.user.userData);
   const dispatch = useDispatch();
@@ -18,8 +18,8 @@ const MyProfile = () => {
     }
   }, [accessToken]);
 
-  const onMessage = () => {
-    navigate("/messages");
+  const onSendMessage = () => {
+    navigate("/messages/userId");
   };
 
   return (
@@ -34,9 +34,9 @@ const MyProfile = () => {
               ></div>
             </div>
           </div>
-          <h4 className="profile_heading">{user.name}</h4>
+          <h4 className="profile_heading">{user.name || "Type your name"}</h4>
           <p className="profile_nick">@{user.login}</p>
-          <button className="profile_message" onClick={onMessage}>
+          <button className="profile_message" onClick={onSendMessage}>
             Message
           </button>
         </div>
@@ -44,7 +44,7 @@ const MyProfile = () => {
           <div className="profile_content-info">
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Post</p>
-              <p className="profile_content-counter">30</p>
+              <p className="profile_content-counter">X</p>
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
@@ -69,4 +69,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default Profile;

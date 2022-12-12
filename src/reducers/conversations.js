@@ -25,8 +25,8 @@ export const getConversations = (accessToken) => {
     };
     fetch(`https://socially-api.onrender.com/conversations`, options)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) =>
+        dispatch(conversations.actions.setConversations(data.response))
+      );
   };
 };
-
-// dispatch(conversations.actions.setConversations(data.response))

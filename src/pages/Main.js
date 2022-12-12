@@ -4,7 +4,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Feed from "./Feed";
 import Messages from "./Messages";
 import People from "./People";
-import MyProfile from "./MyProfile";
+import Profile from "./Profile";
 import AddPost from "./AddPost";
 import SingleMessage from "./SingleMessage";
 import SingleProfile from "./SingleProfile";
@@ -87,7 +87,7 @@ const Main = () => {
         <Route path="addpost" element={<AddPost />} />
         <Route path="people" element={<People />} />
         <Route path="people/:userId" element={<SingleProfile />} />
-        <Route path="myprofile" element={<MyProfile />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
 
       <Paper
@@ -125,9 +125,9 @@ const Main = () => {
             icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
           />
           <BottomNavigationAction
-            to="/myprofile"
+            to="/profile"
             component={Link}
-            icon={<AccountCircle htmlColor={generateIconColor("myprofile")} />}
+            icon={<AccountCircle htmlColor={generateIconColor("profile")} />}
           />
         </BottomNavigation>
       </Paper>

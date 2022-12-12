@@ -1,7 +1,8 @@
 import React from "react";
-import { compareAsc, format } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns'
 
 const FeedElement = ({ avatar, name, createdAt, imageURL, likes }) => {
+
   return (
     <div
       className="section_container-element"
@@ -15,7 +16,7 @@ const FeedElement = ({ avatar, name, createdAt, imageURL, likes }) => {
         <div className="element_details">
           <p className="element_details-profile">{name}</p>
           <p className="element_details-paragraph">
-            {new Date(createdAt).toDateString()}
+            {formatDistanceToNow(new Date(createdAt).toDateString())}
           </p>
         </div>
       </div>
