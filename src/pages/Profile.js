@@ -48,11 +48,11 @@ const Profile = () => {
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
-              <p className="profile_content-counter">{user.followers.length}</p>
+              {/* <p className="profile_content-counter">{user.followers.length}</p> */}
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Follows</p>
-              <p className="profile_content-counter">{user.follows.length}</p>
+              {/* <p className="profile_content-counter">{user.follows.length}</p> */}
             </div>
           </div>
           <div className="profile_content-posts">

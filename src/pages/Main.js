@@ -58,7 +58,7 @@ const Main = () => {
       return "#7DB9B3";
     } else if (location.pathname === "/addpost" && icon === "addpost") {
       return "#7DB9B3";
-    } else if (location.pathname === "/myprofile" && icon === "myprofile") {
+    } else if (location.pathname === "/profile" && icon === "profile") {
       return "#7DB9B3";
     } else {
       return "#000";
