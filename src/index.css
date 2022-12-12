@@ -340,6 +340,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .container_profile-img {
@@ -401,6 +402,8 @@ code {
   line-height: 19px;
   color: #656565;
   margin: 0;
+  border: none;
+  background-color: transparent;
 }
 
 .profile_content-info {

@@ -8,6 +8,7 @@ const user = createSlice({
     login: "",
     userId: "",
     accessToken: "",
+    userData: {},
   },
   reducers: {
     setLogin: (store, action) => {
@@ -20,7 +21,7 @@ const user = createSlice({
       store.accessToken = action.payload;
     },
     setUserData: (store, action) => {
-      store.user = action.payload;
+      store.userData = action.payload;
     },
   },
 });
@@ -86,6 +87,8 @@ export const getUserData = (accessToken) => {
     };
     fetch(`https://socially-api.onrender.com/user`, options)
       .then((res) => res.json())
-      .then((data) => dispatch(user.actions.setUserData(data.response)));
+      .then((data) =>
+        dispatch(user.actions.setUserData(data.response))
+      );
   };
 };
