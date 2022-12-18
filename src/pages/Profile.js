@@ -16,7 +16,7 @@ const Profile = () => {
     if (accessToken) {
       dispatch(getUserData(accessToken));
     }
-  }, [accessToken]);
+  }, [accessToken, dispatch]);
 
   const onSendMessage = () => {
     navigate("/messages/userId");

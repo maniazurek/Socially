@@ -12,7 +12,7 @@ const Messages = () => {
     if (accessToken) {
       dispatch(getConversations(accessToken));
     }
-  }, [accessToken]);
+  }, [accessToken, dispatch]);
 
   return (
     <div className="container_layout">

@@ -14,7 +14,7 @@ const People = () => {
     if (accessToken) {
       dispatch(getUsers(accessToken));
     }
-  }, [accessToken]);
+  }, [accessToken, dispatch]);
 
   return (
     <div className="container_layout">

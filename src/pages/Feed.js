@@ -14,7 +14,7 @@ const Feed = () => {
     if (accessToken) {
       dispatch(getFeed(accessToken));
     }
-  }, [accessToken]);
+  }, [accessToken, dispatch]);
 
   return (
     <div className="container_layout">

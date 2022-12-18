@@ -11,7 +11,7 @@ const Sign = () => {
   const [mode, setMode] = useState("signin");
 
   const accessToken = useSelector((store) => store.user.accessToken);
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const Sign = () => {
     if (accessToken) {
       navigate("/");
     }
-  }, [accessToken]);
+  }, [accessToken, navigate]);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
