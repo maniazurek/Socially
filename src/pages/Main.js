@@ -4,7 +4,6 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Feed from "./Feed";
 import Messages from "./Messages";
 import People from "./People";
-import Profile from "./Profile1";
 import AddPost from "./AddPost";
 import SingleMessage from "./SingleMessage";
 import SingleProfile from "./SingleProfile";

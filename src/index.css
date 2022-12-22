@@ -368,7 +368,7 @@ code {
   background-repeat: no-repeat;
   transform: rotate(-45deg);
   position: relative;
-  top: -5px;
+  top: -28px;
   left: -10px;
 }
 
@@ -381,6 +381,9 @@ code {
   color: #000000;
   margin-top: 6px;
   margin-bottom: 4.2px;
+  border: none;
+  display: flex;
+  text-align: center;
 }
 
 .profile_nick {

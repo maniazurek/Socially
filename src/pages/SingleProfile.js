@@ -67,10 +67,23 @@ const SingleProfile = () => {
         <div className="container_profile-info">
           <div className="container_profile-img">
             <div className="container_profile-img__border">
-              <div
-                className="container_profile-img__picture"
-                style={{ backgroundImage: `url(${user.image})` }}
-              ></div>
+              {isUserLoggedIn ? (
+                <label htmlFor="image">
+                  <input 
+                  type="file"
+                  onChange={onAvatarChange}
+                  accept="image/*"
+                  id="image"
+                  name="image"
+                  />
+                  <img src={user.image}
+                  className="container_profile-img__picture"/>
+                </label>
+              ) : (
+                <img src={user.image}
+                  className="container_profile-img__picture"/>
+              )}
+             
             </div>
           </div>
           {isUserLoggedIn ? (
@@ -94,7 +107,7 @@ const SingleProfile = () => {
           <div className="profile_content-info">
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Post</p>
-              <p className="profile_content-counter">X</p>
+              {/* <p className="profile_content-counter">{user.posts.length}</p> */}
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
@@ -107,7 +120,9 @@ const SingleProfile = () => {
           </div>
           <div className="profile_content-posts">
             {/* {user.posts.map((img) => {
-              <div className="profile_content-post"></div>;
+              <div className="profile_content-post"
+              key={img._id}
+              style={{backgroundImage: `url(${img.image})`}}></div>;
             })} */}
           </div>
         </div>
