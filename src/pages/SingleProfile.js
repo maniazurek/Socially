@@ -118,13 +118,15 @@ const SingleProfile = () => {
               {/* <p className="profile_content-counter">{user.follows.length}</p> */}
             </div>
           </div>
-          <div className="profile_content-posts">
-            {/* {user.posts.map((img) => {
-              <div className="profile_content-post"
+          {/* <div className="profile_content-posts">
+          {user.posts.map((img) => (
+            <div
               key={img._id}
-              style={{backgroundImage: `url(${img.image})`}}></div>;
-            })} */}
-          </div>
+              className="single-user__photo"
+              style={{ backgroundImage: `url(${img.image})` }}
+            ></div>
+          ))}
+          </div> */}
         </div>
       </div>
     </>

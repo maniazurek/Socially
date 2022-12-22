@@ -377,7 +377,7 @@ code {
   background-repeat: no-repeat;
   transform: rotate(-45deg);
   position: relative;
-  top: -28px;
+  top: -9px;
   left: -10px;
 }
 
@@ -450,6 +450,20 @@ code {
   color: #000000;
   margin-top: 5.75px;
   margin-bottom: 0;
+}
+
+.single-user__photo {
+  width: 156.16px;
+  height: 137.36px;
+  border-radius: 19px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.profile_content-posts {
+  display: grid;
+  grid-template-columns: 1fr 1 fr;
 }
 
 .section_container-input {
