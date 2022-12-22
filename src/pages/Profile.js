@@ -1,13 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserData } from "../reducers/user";
+import user, { getUserData } from "../reducers/user";
+import { putUserName, putUserAvatar } from "../reducers/user";
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 import { useParams } from "react-router";
+import { BASE_API_URL } from "../utils/commons";
 
 const Profile = () => {
+  const [user, setUser] = useState({});
   const accessToken = useSelector((store) => store.user.accessToken);
-  const user = useSelector((store) => store.user.userData);
+  const loggedInUser = useSelector((store) => store.user.userId);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -18,9 +22,34 @@ const Profile = () => {
     }
   }, [accessToken, dispatch]);
 
+  useEffect(() => {
+    if (userId) {
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: accessToken,
+        },
+      };
+      fetch(`${BASE_API_URL}/user/${userId}`, options)
+        .then((res) => res.json())
+        .then((data) => setUser(data.response));
+    }
+  }, [userId, accessToken]);
+
+  const onNameChange = (event) => {
+    dispatch(putUserName(event.target.value));
+    setUser({
+      ...user,
+      name: event.target.value,
+    });
+  };
+
   const onSendMessage = () => {
     navigate("/messages/userId");
   };
+
+  const isUserLoggedIn = loggedInUser === user._id;
 
   return (
     <>
@@ -34,7 +63,17 @@ const Profile = () => {
               ></div>
             </div>
           </div>
-          <h4 className="profile_heading">{user.name || "Type your name"}</h4>
+
+          <input
+            className="profile_heading"
+            type="text"
+            placeholder="Type your name"
+            value={user.name}
+            onChange={onNameChange}
+          />
+
+          <h4 className="profile_heading">{user.name}</h4>
+
           <p className="profile_nick">@{user.login}</p>
           <button className="profile_message" onClick={onSendMessage}>
             Message
@@ -48,11 +87,11 @@ const Profile = () => {
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
-              <p className="profile_content-counter">{user.followers.length}</p>
+              {/* <p className="profile_content-counter">{user.followers.length}</p> */}
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Follows</p>
-              <p className="profile_content-counter">{user.follows.length}</p>
+              {/* <p className="profile_content-counter">{user.follows.length}</p> */}
             </div>
           </div>
           <div className="profile_content-posts">

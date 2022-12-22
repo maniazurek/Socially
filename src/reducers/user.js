@@ -8,7 +8,8 @@ const user = createSlice({
     login: "",
     userId: "",
     accessToken: "",
-    userData: {},
+    userName: "",
+    userAvatar: "",
   },
   reducers: {
     setLogin: (store, action) => {
@@ -20,8 +21,16 @@ const user = createSlice({
     setAccessToken: (store, action) => {
       store.accessToken = action.payload;
     },
-    setUserData: (store, action) => {
-      store.userData = action.payload;
+    setUserName: (store, action) => {
+      store.userName = action.payload;
+    },
+    setUserAvatar: (store, action) => {
+      store.userAvatar = action.payload;
+    },
+    setLogOut: (store, action) => {
+      store.login = "";
+      store.userId = "";
+      store.accessToken = "";
     },
   },
 });
@@ -82,13 +91,53 @@ export const getUserData = (accessToken) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: accessToken,
+        Authorization: getState().user.accessToken,
       },
     };
     fetch(`https://socially-api.fly.dev/user`, options)
       .then((res) => res.json())
+      .then((data) => {
+        batch(() => {
+          dispatch(user.actions.setUserName(data.response.name));
+          dispatch(user.actions.setUserAvatar(data.response.image));
+        });
+      });
+  };
+};
+
+export const putUserName = (name) => {
+  return (dispatch, getState) => {
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: getState().user.accessToken,
+      },
+      body: JSON.stringify({
+        name,
+      }),
+    };
+    fetch(`https://socially-api.fly.dev/user`, options)
+      .then((res) => res.json())
+      .then((data) => dispatch(user.actions.setUserName(data.response.name)));
+  };
+};
+
+export const putUserAvatar = (image) => {
+  return (dispatch, getState) => {
+    const formData = new FormData();
+    formData.append("image", image);
+    const options = {
+      method: "PUT",
+      headers: {
+        Authorization: getState().user.accessToken,
+      },
+      body: formData,
+    };
+    fetch(`https://socially-api.fly.dev/user`, options)
+      .then((res) => res.json())
       .then((data) =>
-        dispatch(user.actions.setUserData(data.response))
+        dispatch(user.actions.setUserAvatar(data.response.image))
       );
   };
 };

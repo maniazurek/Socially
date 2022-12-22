@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { BASE_API_URL } from "../utils/commons";
 
 const profiles = createSlice({
   name: "profiles",
@@ -23,7 +24,7 @@ export const getUsers = (accessToken) => {
         Authorization: accessToken,
       },
     };
-    fetch(`https://socially-api.fly.dev/users`, options)
+    fetch(`${BASE_API_URL}/users`, options)
       .then((res) => res.json())
       .then((data) => dispatch(profiles.actions.setUsers(data.response)));
   };
