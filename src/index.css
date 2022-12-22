@@ -157,7 +157,7 @@ code {
   box-shadow: 0px 7px 20px #c4c4c4;
   border-radius: 20px;
   position: relative;
-  padding: 124px;
+  padding: 124px 126px 124px 124px;
 }
 
 .container_data {

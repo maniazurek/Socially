@@ -37,7 +37,7 @@ const AddPost = () => {
                 src={
                   image
                     ? URL.createObjectURL(image)
-                    : "/assets/question-mark.png"
+                    : ""
                 }
                 alt="Preview"
                 className={image ? "section_container-element" : "section_container-element-add"}
