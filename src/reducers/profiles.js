@@ -23,7 +23,7 @@ export const getUsers = (accessToken) => {
         Authorization: accessToken,
       },
     };
-    fetch(`https://socially-api.onrender.com/users`, options)
+    fetch(`https://socially-api.fly.dev/users`, options)
       .then((res) => res.json())
       .then((data) => dispatch(profiles.actions.setUsers(data.response)));
   };

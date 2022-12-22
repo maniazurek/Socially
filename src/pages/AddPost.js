@@ -9,9 +9,9 @@ const AddPost = () => {
           className="section_container-element"
           style={{ marginBottom: "41px", marginTop: "0" }}
         ></div>
-            <MainButton type="submit">
-              <span>Upload</span>
-            </MainButton>
+        <MainButton type="submit">
+          <span>Upload</span>
+        </MainButton>
       </div>
     </div>
   );

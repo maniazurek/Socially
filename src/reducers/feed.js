@@ -27,7 +27,7 @@ export const getFeed = (accessToken) => {
         Authorization: accessToken,
       },
     };
-    fetch(`https://socially-api.onrender.com/feed`, options)
+    fetch(`https://socially-api.fly.dev/feed`, options)
       .then((res) => res.json())
       .then((data) => dispatch(feed.actions.setFeed(data.response)));
   };

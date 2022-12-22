@@ -40,7 +40,7 @@ export const userLogin = (login, password) => {
         password,
       }),
     };
-    fetch(`https://socially-api.onrender.com/signin`, options)
+    fetch(`https://socially-api.fly.dev/signin`, options)
       .then((res) => res.json())
       .then((data) => {
         batch(() => {
@@ -64,7 +64,7 @@ export const userRegister = (login, password) => {
         password,
       }),
     };
-    fetch(`https://socially-api.onrender.com/signup`, options)
+    fetch(`https://socially-api.fly.dev/signup`, options)
       .then((res) => res.json())
       .then((data) => {
         batch(() => {
@@ -85,7 +85,7 @@ export const getUserData = (accessToken) => {
         Authorization: accessToken,
       },
     };
-    fetch(`https://socially-api.onrender.com/user`, options)
+    fetch(`https://socially-api.fly.dev/user`, options)
       .then((res) => res.json())
       .then((data) =>
         dispatch(user.actions.setUserData(data.response))
