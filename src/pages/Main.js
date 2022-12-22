@@ -4,7 +4,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Feed from "./Feed";
 import Messages from "./Messages";
 import People from "./People";
-import Profile from "./Profile";
+import Profile from "./Profile1";
 import AddPost from "./AddPost";
 import SingleMessage from "./SingleMessage";
 import SingleProfile from "./SingleProfile";
@@ -23,7 +23,10 @@ import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
+import user from "../reducers/user";
+
 const Main = () => {
+  const userId = useSelector((store) => store.user.userId);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -33,7 +36,7 @@ const Main = () => {
     if (!accessToken) {
       navigate("/sign");
     }
-  }, [accessToken]);
+  }, [accessToken, navigate]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -87,7 +90,7 @@ const Main = () => {
         <Route path="addpost" element={<AddPost />} />
         <Route path="people" element={<People />} />
         <Route path="people/:userId" element={<SingleProfile />} />
-        <Route path="profile" element={<Profile />} />
+        {/* <Route path="profile" element={<Profile />} /> */}
       </Routes>
 
       <Paper
@@ -125,7 +128,7 @@ const Main = () => {
             icon={<GroupsOutlined htmlColor={generateIconColor("people")} />}
           />
           <BottomNavigationAction
-            to="/profile"
+            to={`/people/${userId}`}
             component={Link}
             icon={<AccountCircle htmlColor={generateIconColor("profile")} />}
           />

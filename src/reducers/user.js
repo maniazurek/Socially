@@ -85,7 +85,7 @@ export const userRegister = (login, password) => {
   };
 };
 
-export const getUserData = (accessToken) => {
+export const getUserData = () => {
   return (dispatch, getState) => {
     const options = {
       method: "GET",

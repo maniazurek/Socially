@@ -1,10 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import user, { getUserData } from "../reducers/user";
-import { putUserName, putUserAvatar } from "../reducers/user";
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router";
-import { useParams } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
+import { getUserData } from "../reducers/user";
+import { putUserName, putUserAvatar } from "../reducers/user";
+import { useNavigate, useParams } from "react-router";
 import { BASE_API_URL } from "../utils/commons";
 
 const Profile = () => {
@@ -12,13 +11,14 @@ const Profile = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
   const loggedInUser = useSelector((store) => store.user.userId);
 
+  const { userId } = useParams();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userId } = useParams();
 
   useEffect(() => {
     if (accessToken) {
-      dispatch(getUserData(accessToken));
+      dispatch(getUserData());
     }
   }, [accessToken, dispatch]);
 
@@ -45,11 +45,21 @@ const Profile = () => {
     });
   };
 
+  const onAvatarChange = (event) => {
+    dispatch(putUserAvatar(event.target.files[0]));
+    setUser({
+      ...user,
+      image: URL.createObjectURL(event.target.files[0]),
+    });
+  };
+
   const onSendMessage = () => {
     navigate("/messages/userId");
   };
 
   const isUserLoggedIn = loggedInUser === user._id;
+
+  console.log(user)
 
   return (
     <>
@@ -63,16 +73,17 @@ const Profile = () => {
               ></div>
             </div>
           </div>
-
-          <input
-            className="profile_heading"
-            type="text"
-            placeholder="Type your name"
-            value={user.name}
-            onChange={onNameChange}
-          />
-
-          <h4 className="profile_heading">{user.name}</h4>
+          {isUserLoggedIn ? (
+            <input
+              className="profile_heading"
+              type="text"
+              placeholder="Type your name"
+              value={user.name}
+              onChange={onNameChange}
+            />
+          ) : (
+            <h4 className="profile_heading">{user.name}</h4>
+          )}
 
           <p className="profile_nick">@{user.login}</p>
           <button className="profile_message" onClick={onSendMessage}>
@@ -95,12 +106,9 @@ const Profile = () => {
             </div>
           </div>
           <div className="profile_content-posts">
-            <div className="profile_content-post"></div>
-            <div className="profile_content-post"></div>
-            <div className="profile_content-post"></div>
-            <div className="profile_content-post"></div>
-            <div className="profile_content-post"></div>
-            <div className="profile_content-post"></div>
+            {/* {user.posts.map((img) => {
+              <div className="profile_content-post"></div>;
+            })} */}
           </div>
         </div>
       </div>
