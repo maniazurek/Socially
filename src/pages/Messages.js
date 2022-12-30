@@ -1,14 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getConversations } from "../reducers/conversations";
-import MessageElement from "../components/MessagesElement";
+import MessagesElement from "../components/MessagesElement";
 
 const Messages = () => {
-  const accessToken = useSelector((store) => store.user.accessToken);
   const conversationsList = useSelector((store) => store.conversations.list);
   const userId = useSelector((store) => store.user.userId);
-  const dispatch = useDispatch();
+
+  console.log(conversationsList);
 
   return (
     <div className="container_layout">
@@ -22,14 +20,14 @@ const Messages = () => {
                 (user) => user._id !== userId
               );
               return (
-                <MessageElement
-                key={conversation._id}
-                conversationId={conversation._id}
-                interlocutor={interlocutor.name}
-                interlocutorAvatar={interlocutor.image}
-                messages={conversation.messages}
+                <MessagesElement
+                  key={conversation._id}
+                  conversationId={conversation._id}
+                  interlocutor={interlocutor.name}
+                  interlocutorAvatar={interlocutor.image}
+                  messages={conversation.messages}
                 />
-              )
+              );
             })}
         </div>
       </div>

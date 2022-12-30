@@ -26,8 +26,6 @@ const SingleMessage = () => {
     }
   };
 
-  console.log(conversation);
-
   return (
     <div className="container_layout">
       <h3 className="section_heading">Message to {conversation.interlocutors.find((user) => user._id !== userId).name.split(" ")[0]}</h3>

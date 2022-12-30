@@ -56,7 +56,7 @@ const Main = () => {
   const generateIconColor = (icon) => {
     if (location.pathname === "/" && icon === "feed") {
       return "#7DB9B3";
-    } else if (location.pathname === "/messages" && icon === "messages") {
+    } else if (location.pathname === "/conversations" && icon === "conversations") {
       return "#7DB9B3";
     } else if (location.pathname === "/people" && icon === "people") {
       return "#7DB9B3";
@@ -70,7 +70,7 @@ const Main = () => {
   };
 
   const generateHeader = () => {
-    if (location.pathname === "/messages/:userId") {
+    if (location.pathname === "/conversations/:userId") {
       return "custom_header";
     } else {
       return "header";
@@ -115,10 +115,10 @@ const Main = () => {
             icon={<Home htmlColor={generateIconColor("feed")} />}
           />
           <BottomNavigationAction
-            to="/messages"
+            to="/conversations"
             component={Link}
             icon={
-              <ChatBubbleOutline htmlColor={generateIconColor("messages")} />
+              <ChatBubbleOutline htmlColor={generateIconColor("conversations")} />
             }
           />
           <BottomNavigationAction

@@ -22,6 +22,7 @@ const Feed = () => {
       <div className="section_container">
         {feedList.map((feedElement) => (
           <FeedElement
+            key={feedElement._id}
             avatar={feedElement.user.image}
             name={feedElement.user.name}
             createdAt={feedElement.createdAt}
