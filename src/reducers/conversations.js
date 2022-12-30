@@ -13,6 +13,15 @@ const conversations = createSlice({
     setConversation: (store, action) => {
       store.list = [...store.list, action.payload];
     },
+    setSingleMessage: (store, action) => {
+      store.list = store.list.map((conversation) => {
+        if (conversation._id === action.payload._id) {
+          return action.payload;
+        } else {
+          return conversation;
+        }
+      });
+    },
   },
 });
 
@@ -58,5 +67,26 @@ export const sendMessageFromProfile = (userId, navigate) => {
           navigate(`/conversations/${data.response[0]._id}`);
         }
       });
+  };
+};
+
+export const sendMessage = (conversationId, authorId, message) => {
+  return (dispatch, getState) => {
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: getState().user.accessToken,
+      },
+      body: JSON.stringify({
+        authorId,
+        message,
+      }),
+    };
+    fetch(`${BASE_API_URL}/conversations/${conversationId}`, options)
+      .then((res) => res.json())
+      .then((data) =>
+        dispatch(conversations.actions.setSingleMessage(data.response))
+      );
   };
 };

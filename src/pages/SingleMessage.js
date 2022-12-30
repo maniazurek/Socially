@@ -1,20 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import MainButton from "../styled-components/MainButton";
+
+import { sendMessage } from "../reducers/conversations";
+import user from "../reducers/user";
 
 const SingleMessage = () => {
+  const [message, setMessage] = useState("");
   const { conversationId } = useParams();
-  const messagesList = useSelector((store) => store.conversations.list.find((item) => item._id === conversationId))
+
+  const conversation = useSelector((store) =>
+    store.conversations.list.find((item) => item._id === conversationId)
+  );
+
+  const userId = useSelector((store) => store.user.userId);
+
+  const dispatch = useDispatch();
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    if (message !== "") {
+      dispatch(sendMessage(conversationId, userId, message));
+      setMessage("");
+    }
+  };
 
   return (
     <div className="container_layout">
       <h3 className="section_heading">Message to</h3>
-      <div className="section_container">
-        <div className="single_message">we r goin to c the lions</div>
-        <div className="single_message">
-          they are doing a feed thing event at the zoo..
-        </div>
-      </div>
+      {/* <div className="section_container">
+        {conversation.messages.map((message) => (
+          <div className={userId === message.author ? "single_message-A" : "single_message-B"}>{message.message}</div>
+        ))}       
+      </div> */}
+      <form onSubmit={onFormSubmit}>
+        <input
+        className="send_message-input"
+          type="text"
+          placeholder="Write a message..."
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+        ></input>
+        <MainButton
+          type="submit"
+          className="send_button"
+          style={{ color: "white" }}
+        >
+          Send
+        </MainButton>
+      </form>
     </div>
   );
 };

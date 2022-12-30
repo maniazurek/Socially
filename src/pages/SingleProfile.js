@@ -79,7 +79,7 @@ const SingleProfile = () => {
                   />
                   <img
                     src={user.image}
-                    className="container_profile-img__picture"
+                    className={isUserLoggedIn ? "container_profile-img__picture-loggedIn" : "container_profile-img__picture"}
                   />
                 </label>
               ) : (
