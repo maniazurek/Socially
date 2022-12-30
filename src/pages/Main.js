@@ -18,7 +18,7 @@ import {
 import { Paper } from "@mui/material";
 import { useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
@@ -28,6 +28,7 @@ const Main = () => {
   const userId = useSelector((store) => store.user.userId);
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const accessToken = useSelector((store) => store.user.accessToken);
 
@@ -49,6 +50,7 @@ const Main = () => {
   const onLogOut = () => {
     navigate("/sign");
     window.scrollTo(0, 0);
+    dispatch(user.actions.setLogOut())
   };
 
   const generateIconColor = (icon) => {
@@ -85,7 +87,10 @@ const Main = () => {
       <Routes>
         <Route index element={<Feed />} />
         <Route path="conversations" element={<Messages />} />
-        <Route path="conversations/:userId" element={<SingleMessage />} />
+        <Route
+          path="conversations/:conversationId"
+          element={<SingleMessage />}
+        />
         <Route path="addpost" element={<AddPost />} />
         <Route path="people" element={<People />} />
         <Route path="people/:userId" element={<SingleProfile />} />

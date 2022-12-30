@@ -156,6 +156,14 @@ code {
   font-size: 12.8px;
   line-height: 19px;
   color: #656565;
+  top: 250px;
+  position: relative;
+}
+
+.send_button {
+  position: absolute;
+  top: 182px;
+  left: 264px;
 }
 
 .section_container-element {
@@ -572,7 +580,22 @@ code {
   background-repeat: no-repeat;
 }
 
-.single_message {
+.single_message-A {
+  background-color: #fafafa;
+  color: #656565;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  padding: 11px 25px;
+  border-radius: 25px 0px 25px 25px;
+  margin-bottom: 16px;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.single_message-B {
   background-color: #fafafa;
   color: #656565;
   font-family: "Poppins";

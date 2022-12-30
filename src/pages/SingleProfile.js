@@ -60,8 +60,6 @@ const SingleProfile = () => {
 
   const isUserLoggedIn = loggedInUser === user._id;
 
-  console.log(user);
-
   return (
     <>
       <div className="container_layout">

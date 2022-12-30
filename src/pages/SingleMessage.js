@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import MainButton from "../styled-components/MainButton";
+import SendIcon from "@mui/icons-material/Send";
 
 import { sendMessage } from "../reducers/conversations";
-import user from "../reducers/user";
 
 const SingleMessage = () => {
   const [message, setMessage] = useState("");
@@ -26,17 +26,19 @@ const SingleMessage = () => {
     }
   };
 
+  console.log(conversation);
+
   return (
     <div className="container_layout">
-      <h3 className="section_heading">Message to</h3>
-      {/* <div className="section_container">
+      <h3 className="section_heading">Message to {conversation.interlocutors.find((user) => user._id !== userId).name.split(" ")[0]}</h3>
+      <div className="section_container">
         {conversation.messages.map((message) => (
-          <div className={userId === message.author ? "single_message-A" : "single_message-B"}>{message.message}</div>
+          <div key={message._id} className={userId === message.author ? "single_message-A" : "single_message-B"}>{message.message}</div>
         ))}       
-      </div> */}
+      </div>
       <form onSubmit={onFormSubmit}>
         <input
-        className="send_message-input"
+          className="send_message-input"
           type="text"
           placeholder="Write a message..."
           value={message}
@@ -47,7 +49,7 @@ const SingleMessage = () => {
           className="send_button"
           style={{ color: "white" }}
         >
-          Send
+          <SendIcon style={{ transform: "rotate(-90deg)" }} />
         </MainButton>
       </form>
     </div>

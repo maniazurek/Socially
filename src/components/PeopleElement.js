@@ -7,8 +7,6 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
   const loggedInUser = useSelector((store) => store.user.userId);
   const dispatch = useDispatch();
 
-  console.log(followers)
-
   // const isUserFollow = followers.find((user) => user._id === loggedInUser)
   //   ? "unfollow"
   //   : "follow";
