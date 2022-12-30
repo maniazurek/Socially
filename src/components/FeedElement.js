@@ -1,7 +1,14 @@
 import React from "react";
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNow } from "date-fns";
+import { likeFeed } from "../reducers/feed";
+import { useDispatch, useSelector } from "react-redux";
 
-const FeedElement = ({ avatar, name, createdAt, imageURL, likes }) => {
+const FeedElement = ({ avatar, name, createdAt, imageURL, likes, feedId }) => {
+  const dispatch = useDispatch;
+
+  const toggleLike = (feedId) => {
+    dispatch(likeFeed(feedId));
+  };
 
   return (
     <div
@@ -16,13 +23,14 @@ const FeedElement = ({ avatar, name, createdAt, imageURL, likes }) => {
         <div className="element_details">
           <p className="element_details-profile">{name}</p>
           <p className="element_details-paragraph">
-            {formatDistanceToNow(new Date(createdAt).toDateString())}
+            {new Date(createdAt).toDateString()}
           </p>
         </div>
       </div>
       <div className="likes_container">
-        <div className="likes_img"></div>
-        <p className="likes_counter">{likes}</p>
+        <button className="likes_img" onClick={() => toggleLike(feedId)}>
+        </button>
+        <p className="likes_counter">{likes.length}</p>
       </div>
     </div>
   );

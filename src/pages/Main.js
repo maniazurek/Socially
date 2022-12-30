@@ -84,8 +84,8 @@ const Main = () => {
       </header>
       <Routes>
         <Route index element={<Feed />} />
-        <Route path="messages" element={<Messages />} />
-        <Route path="messages/:userId" element={<SingleMessage />} />
+        <Route path="conversations" element={<Messages />} />
+        <Route path="conversations/:userId" element={<SingleMessage />} />
         <Route path="addpost" element={<AddPost />} />
         <Route path="people" element={<People />} />
         <Route path="people/:userId" element={<SingleProfile />} />

@@ -10,9 +10,15 @@ const feed = createSlice({
     setFeed: (store, action) => {
       store.list = action.payload;
     },
-    // setLike: (store, action) => {
-    //   store.like = action.payload
-    // }
+    setLike: (store, action) => {
+      store.list = store.list.map((feed) => {
+        if (feed._id === action.payload._id) {
+          return action.payload;
+        } else {
+          return feed;
+        }
+      });
+    },
   },
 });
 
@@ -47,5 +53,20 @@ export const postFeed = (image, navigate) => {
     fetch(`${BASE_API_URL}/feed`, options)
       .then((res) => res.json())
       .then((data) => navigate(`/users/${data.response.user._id}`));
+  };
+};
+
+export const likeFeed = (feedId) => {
+  return (dispatch, getState) => {
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: getState().user.accessToken,
+      },
+    };
+    fetch(`${BASE_API_URL}/feed/likes/${feedId}`, options)
+      .then((res) => res.json())
+      .then((data) => dispatch(feed.actions.setLike(data.response)));
   };
 };

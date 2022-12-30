@@ -5,9 +5,8 @@ import { getUserData } from "../reducers/user";
 import { putUserName, putUserAvatar } from "../reducers/user";
 import { useNavigate, useParams } from "react-router";
 import { BASE_API_URL } from "../utils/commons";
-import { sendMessageFromProfile } from "../reducers/conversations";
 
-const SingleProfile = () => {
+const Profile = () => {
   const [user, setUser] = useState({});
   const accessToken = useSelector((store) => store.user.accessToken);
   const loggedInUser = useSelector((store) => store.user.userId);
@@ -32,7 +31,7 @@ const SingleProfile = () => {
           Authorization: accessToken,
         },
       };
-      fetch(`https://socially-api.fly.dev/user/${userId}`, options)
+      fetch(`${BASE_API_URL}/user/${userId}`, options)
         .then((res) => res.json())
         .then((data) => setUser(data.response));
     }
@@ -55,12 +54,12 @@ const SingleProfile = () => {
   };
 
   const onSendMessage = () => {
-    dispatch(sendMessageFromProfile(userId, navigate));
+    navigate("/messages/userId");
   };
 
   const isUserLoggedIn = loggedInUser === user._id;
 
-  console.log(user);
+  console.log(user)
 
   return (
     <>
@@ -68,26 +67,10 @@ const SingleProfile = () => {
         <div className="container_profile-info">
           <div className="container_profile-img">
             <div className="container_profile-img__border">
-              {isUserLoggedIn ? (
-                <label htmlFor="image">
-                  <input
-                    type="file"
-                    onChange={onAvatarChange}
-                    accept="image/*"
-                    id="image"
-                    name="image"
-                  />
-                  <img
-                    src={user.image}
-                    className="container_profile-img__picture"
-                  />
-                </label>
-              ) : (
-                <img
-                  src={user.image}
-                  className="container_profile-img__picture"
-                />
-              )}
+              <div
+                className="container_profile-img__picture"
+                style={{ backgroundImage: `url(${user.image})` }}
+              ></div>
             </div>
           </div>
           {isUserLoggedIn ? (
@@ -103,12 +86,7 @@ const SingleProfile = () => {
           )}
 
           <p className="profile_nick">@{user.login}</p>
-          <button
-            className={
-              isUserLoggedIn ? "profile_message-hidden" : "profile_message"
-            }
-            onClick={onSendMessage}
-          >
+          <button className="profile_message" onClick={onSendMessage}>
             Message
           </button>
         </div>
@@ -116,7 +94,7 @@ const SingleProfile = () => {
           <div className="profile_content-info">
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Post</p>
-              {/* <p className="profile_content-counter">{user.posts.length}</p> */}
+              <p className="profile_content-counter">X</p>
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
@@ -127,19 +105,15 @@ const SingleProfile = () => {
               {/* <p className="profile_content-counter">{user.follows.length}</p> */}
             </div>
           </div>
-          {/* <div className="profile_content-posts">
-          {user.posts.map((img) => (
-            <div
-              key={img._id}
-              className="single-user__photo"
-              style={{ backgroundImage: `url(${img.image})` }}
-            ></div>
-          ))}
-          </div> */}
+          <div className="profile_content-posts">
+            {/* {user.posts.map((img) => {
+              <div className="profile_content-post"></div>;
+            })} */}
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default SingleProfile;
+export default Profile;

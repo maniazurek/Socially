@@ -148,7 +148,7 @@ code {
   box-shadow: 0px 7px 20px #c4c4c4;
   border-radius: 20px;
   position: relative;
-  margin-top: 10px;
+  margin-top: 32px;
 }
 
 .section_container-element-add {
@@ -269,6 +269,9 @@ code {
   width: 16.67px;
   height: 15.29px;
   color: #ffffff;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
 }
 
 .likes_counter {
@@ -416,6 +419,10 @@ code {
   margin: 0;
   border: none;
   background-color: transparent;
+}
+
+.profile_message-hidden {
+  display: none;
 }
 
 .profile_content-info {

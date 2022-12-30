@@ -7,6 +7,8 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
   const loggedInUser = useSelector((store) => store.user.userId);
   const dispatch = useDispatch();
 
+  console.log(followers)
+
   // const isUserFollow = followers.find((user) => user._id === loggedInUser)
   //   ? "unfollow"
   //   : "follow";
@@ -32,9 +34,9 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
             <p className="element_details-name">{name || "Socially User"}</p>
           </div>
         </Link>
-        <button className="element_details-text">
-        Follow  {/* {isUserFollow === "unfollow" ? "Following" : "Follow"} */}
-        </button>
+        {/* <button className="element_details-text" onClick={onFollowChange}>
+        Follow  {isUserFollow === "unfollow" ? "Follow" : "Following"}
+        </button> */}
       </div>
     </div>
   );
