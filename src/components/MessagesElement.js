@@ -10,7 +10,7 @@ const MessagesElement = ({
   const lastMessage = messages[messages.length - 1].message;
   return (
     <Link to={`/conversations/${conversationId}`}>
-      <div className="element_details-message">
+      <div className="element_details-message" style={{ backgroundColor: "#e1f6f4"}}>
         <div className="element_details-img-border">
           <div
             className="element_details-img__profile"

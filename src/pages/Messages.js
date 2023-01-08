@@ -19,29 +19,32 @@ const Messages = () => {
   }, [accessToken, dispatch]);
 
   return (
-    <div className="container_layout">
-      <h3 className="section_heading">Messages</h3>
-      <div className="section_container">
-        <div className="section_container-message__profile">
-          {conversationsList
-            .filter((conversation) => conversation.messages.length !== 0)
-            .map((conversation) => {
-              const interlocutor = conversation.interlocutors.find(
-                (user) => user._id !== userId
-              );
-              return (
-                <MessagesElement
-                  key={conversation._id}
-                  conversationId={conversation._id}
-                  interlocutor={interlocutor.name}
-                  interlocutorAvatar={interlocutor.image}
-                  messages={conversation.messages}
-                />
-              );
-            })}
+    <>
+      <div className="background_messages"></div>
+      <div className="container_layout">
+        <h3 className="section_heading">Messages</h3>
+        <div className="section_container">
+          <div className="section_container-message__profile">
+            {conversationsList
+              .filter((conversation) => conversation.messages.length !== 0)
+              .map((conversation) => {
+                const interlocutor = conversation.interlocutors.find(
+                  (user) => user._id !== userId
+                );
+                return (
+                  <MessagesElement
+                    key={conversation._id}
+                    conversationId={conversation._id}
+                    interlocutor={interlocutor.name}
+                    interlocutorAvatar={interlocutor.image}
+                    messages={conversation.messages}
+                  />
+                );
+              })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

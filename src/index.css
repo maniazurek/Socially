@@ -184,6 +184,7 @@ code {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  object-fit: cover;
 }
 
 .section_container-element-add {
@@ -208,6 +209,10 @@ code {
   padding: 0 24px;
   background-color: transparent;
   margin-bottom: 100px;
+}
+
+.background_messages {
+  background-image: url(../src/assets/Rectangle\ 2.png);
 }
 
 .container_paragraph {
@@ -447,6 +452,7 @@ a:-webkit-any-link {
   position: relative;
   top: -9px;
   left: -10px;
+  object-fit: cover;
 }
 
 .container_profile-img__picture-loggedIn {
@@ -545,10 +551,9 @@ a:-webkit-any-link {
 }
 
 .profile_content-posts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   align-items: center;
   column-gap: 17.64px;
   row-gap: 17.64px;
@@ -644,4 +649,5 @@ a:-webkit-any-link {
   border-radius: 0 25px 25px 25px;
   margin-bottom: 16px;
   width: fit-content;
+  margin-right: auto;
 }
