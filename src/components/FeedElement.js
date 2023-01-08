@@ -24,7 +24,7 @@ const FeedElement = ({ avatar, name, createdAt, imageURL, likes, feedId }) => {
         <div className="element_details">
           <p className="element_details-profile">{name}</p>
           <p className="element_details-paragraph">
-            {new Date(createdAt).toDateString()}
+            {formatDistanceToNow((new Date(createdAt)))} ago
           </p>
         </div>
       </div>

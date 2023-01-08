@@ -8,7 +8,7 @@ const feed = createSlice({
   },
   reducers: {
     setFeed: (store, action) => {
-      store.list = action.payload;
+      store.list = action.payload.sort((a, b) => b.createdAt - a.createdAt);
     },
     setLike: (store, action) => {
       store.list = store.list.map((feed) => {

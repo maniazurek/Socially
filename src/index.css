@@ -464,6 +464,7 @@ a:-webkit-any-link {
   position: relative;
   left: -10px;
   top: -28px;
+  object-fit: cover;
 }
 
 .profile_heading {
@@ -623,7 +624,7 @@ a:-webkit-any-link {
 }
 
 .single_message-A {
-  background-color: #fafafa;
+  background-color: #e1f6f4;
   color: #656565;
   font-family: "Poppins";
   font-style: normal;
