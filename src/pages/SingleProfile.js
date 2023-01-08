@@ -114,19 +114,19 @@ const SingleProfile = () => {
           <div className="profile_content-info">
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Post</p>
-              <p className="profile_content-counter">{user.posts.length}</p>
+              <p className="profile_content-counter">{user?.posts?.length}</p>
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
-              <p className="profile_content-counter">{user.followers.length}</p>
+              <p className="profile_content-counter">{user?.followers?.length}</p>
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Follows</p>
-              <p className="profile_content-counter">{user.follows.length}</p>
+              <p className="profile_content-counter">{user?.follows?.length}</p>
             </div>
           </div>
           <div className="profile_content-posts">
-          {user.posts.map((img) => (
+          {user?.posts?.map((img) => (
             <div
               key={img._id}
               className="single-user__photo"
