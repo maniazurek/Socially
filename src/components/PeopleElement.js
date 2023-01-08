@@ -7,13 +7,13 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
   const loggedInUser = useSelector((store) => store.user.userId);
   const dispatch = useDispatch();
 
-  // const isUserFollow = followers.find((user) => user._id === loggedInUser)
-  //   ? "unfollow"
-  //   : "follow";
+  const isUserFollow = followers?.find((user) => user._id === loggedInUser)
+    ? "unfollow"
+    : "follow";
 
-  // const onFollowChange = () => {
-  //   dispatch(followToggle(userId, isUserFollow));
-  // };
+  const onFollowChange = () => {
+    dispatch(followToggle(userId, isUserFollow));
+  };
 
   return (
     <div className="section_container-message__profile">
@@ -32,9 +32,9 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
             <p className="element_details-name">{name || "Socially User"}</p>
           </div>
         </Link>
-        {/* <button className="element_details-text" onClick={onFollowChange}>
-        Follow  {isUserFollow === "unfollow" ? "Follow" : "Following"}
-        </button> */}
+        <button className="element_details-text" onClick={onFollowChange}>
+          {isUserFollow === "follow" ? "Follow" : "Following"}
+        </button>
       </div>
     </div>
   );
