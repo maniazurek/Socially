@@ -32,7 +32,7 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
             <p className="element_details-name">{name || "Socially User"}</p>
           </div>
         </Link>
-        <button className="element_details-text" onClick={onFollowChange}>
+        <button className={isUserFollow === "follow" ? "element_details-text" : "element_details-text_alt"} onClick={onFollowChange}>
           {isUserFollow === "follow" ? "Follow" : "Following"}
         </button>
       </div>

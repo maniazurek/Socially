@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MessagesElement from "../components/MessagesElement";
+import { getConversations } from "../reducers/conversations";
 
 const Messages = () => {
   const conversationsList = useSelector((store) => store.conversations.list);
+  const accessToken = useSelector((store) => store.user.accessToken);
   const userId = useSelector((store) => store.user.userId);
 
   console.log(conversationsList);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (accessToken) {
+      dispatch(getConversations(accessToken));
+    }
+  }, [accessToken, dispatch]);
 
   return (
     <div className="container_layout">
