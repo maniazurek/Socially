@@ -52,7 +52,7 @@ export const postFeed = (image, navigate) => {
     };
     fetch(`${BASE_API_URL}/feed`, options)
       .then((res) => res.json())
-      .then((data) => navigate(`/users/${data.response.user._id}`));
+      .then((data) => navigate(`/people/${data.response.user._id}`));
   };
 };
 
