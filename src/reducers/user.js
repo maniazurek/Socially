@@ -49,7 +49,7 @@ export const userLogin = (login, password) => {
         password,
       }),
     };
-    fetch(`https://socially-api.fly.dev/signin`, options)
+    fetch(`${BASE_API_URL}/signin`, options)
       .then((res) => res.json())
       .then((data) => {
         batch(() => {
@@ -73,7 +73,7 @@ export const userRegister = (login, password) => {
         password,
       }),
     };
-    fetch(`https://socially-api.fly.dev/signup`, options)
+    fetch(`${BASE_API_URL}/signup`, options)
       .then((res) => res.json())
       .then((data) => {
         batch(() => {
@@ -94,7 +94,7 @@ export const getUserData = () => {
         Authorization: getState().user.accessToken,
       },
     };
-    fetch(`https://socially-api.fly.dev/user`, options)
+    fetch(`${BASE_API_URL}/user`, options)
       .then((res) => res.json())
       .then((data) => {
         batch(() => {
@@ -117,7 +117,7 @@ export const putUserName = (name) => {
         name,
       }),
     };
-    fetch(`https://socially-api.fly.dev/user`, options)
+    fetch(`${BASE_API_URL}/user`, options)
       .then((res) => res.json())
       .then((data) => dispatch(user.actions.setUserName(data.response.name)));
   };
@@ -134,7 +134,7 @@ export const putUserAvatar = (image) => {
       },
       body: formData,
     };
-    fetch(`https://socially-api.fly.dev/user`, options)
+    fetch(`${BASE_API_URL}/user`, options)
       .then((res) => res.json())
       .then((data) =>
         dispatch(user.actions.setUserAvatar(data.response.image))

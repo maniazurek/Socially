@@ -32,7 +32,7 @@ const SingleProfile = () => {
           Authorization: accessToken,
         },
       };
-      fetch(`https://socially-api.fly.dev/user/${userId}`, options)
+      fetch(`${BASE_API_URL}/user/${userId}`, options)
         .then((res) => res.json())
         .then((data) => setUser(data.response));
     }

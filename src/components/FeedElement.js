@@ -4,7 +4,6 @@ import { likeFeed } from "../reducers/feed";
 import { useDispatch, useSelector } from "react-redux";
 
 const FeedElement = ({ avatar, name, createdAt, imageURL, likes, feedId }) => {
-  const loggedInUser = useSelector((store) => store.user.usserId)
   const dispatch = useDispatch;
 
   const toggleLike = (feedId) => {

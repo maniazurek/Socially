@@ -644,6 +644,7 @@ a:-webkit-any-link {
   margin-bottom: 16px;
   width: fit-content;
   margin-left: auto;
+  max-width: 70%;
 }
 
 .single_message-B {
@@ -659,4 +660,5 @@ a:-webkit-any-link {
   margin-bottom: 16px;
   width: fit-content;
   margin-right: auto;
+  max-width: 70%;
 }
