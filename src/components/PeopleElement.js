@@ -26,13 +26,20 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
             <div className="element_details-img-border">
               <div
                 className="element_details-img__profile"
-                style={{ backgroundImage: `url(${avatar})`}}
+                style={{ backgroundImage: `url(${avatar})` }}
               ></div>
             </div>
             <p className="element_details-name">{name || "Socially User"}</p>
           </div>
         </Link>
-        <button className={isUserFollow === "follow" ? "element_details-text" : "element_details-text_alt"} onClick={onFollowChange}>
+        <button
+          className={
+            isUserFollow === "follow"
+              ? "element_details-text"
+              : "element_details-text_alt"
+          }
+          onClick={onFollowChange}
+        >
           {isUserFollow === "follow" ? "Follow" : "Following"}
         </button>
       </div>
