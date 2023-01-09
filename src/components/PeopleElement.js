@@ -26,7 +26,7 @@ const PeopleElement = ({ userId, name, avatar, followers }) => {
             <div className="element_details-img-border">
               <div
                 className="element_details-img__profile"
-                style={{ backgroundImage: `url(${avatar})` }}
+                style={{ backgroundImage: `url(${avatar})`}}
               ></div>
             </div>
             <p className="element_details-name">{name || "Socially User"}</p>

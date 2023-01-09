@@ -470,8 +470,8 @@ a:-webkit-any-link {
   background-repeat: no-repeat;
   transform: rotate(-45deg);
   position: relative;
-  left: -10px;
-  top: -28px;
+  left: -8px;
+  top: -32px;
   object-fit: cover;
 }
 
