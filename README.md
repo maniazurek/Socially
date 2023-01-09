@@ -1,9 +1,9 @@
-Technologies used in this project:
+#Technologies used in this project:
 
-React
-React Router
-Redux
-REST API
-Material UI
-Styled Components
-PWA
+- React
+- React Router
+- Redux
+- REST API
+- Material UI
+- Styled Components
+- PWA
