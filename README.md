@@ -8,7 +8,7 @@
 - Styled Components
 - PWA
 
-# Documentation
+# Documentation:
 
 API
 Base url: https://socially-api.fly.dev
