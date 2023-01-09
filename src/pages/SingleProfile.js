@@ -77,7 +77,11 @@ const SingleProfile = () => {
                   />
                   <img
                     src={user.image}
-                    className={isUserLoggedIn ? "container_profile-img__picture-loggedIn" : "container_profile-img__picture"}
+                    className={
+                      isUserLoggedIn
+                        ? "container_profile-img__picture-loggedIn"
+                        : "container_profile-img__picture"
+                    }
                   />
                 </label>
               ) : (
@@ -118,7 +122,9 @@ const SingleProfile = () => {
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Followers</p>
-              <p className="profile_content-counter">{user?.followers?.length}</p>
+              <p className="profile_content-counter">
+                {user?.followers?.length}
+              </p>
             </div>
             <div className="profile_content-info__element">
               <p className="profile_content-heading">Follows</p>
@@ -126,13 +132,15 @@ const SingleProfile = () => {
             </div>
           </div>
           <div className="profile_content-posts">
-          {user?.posts?.map((img) => (
-            <div
-              key={img._id}
-              className="single-user__photo"
-              style={{ backgroundImage: `url(${img.image})` }}
-            ></div>
-          ))}
+            {user?.posts
+              ?.sort((a, b) => b.createdAt - a.createdAt)
+              .map((img) => (
+                <div
+                  key={img._id}
+                  className="single-user__photo"
+                  style={{ backgroundImage: `url(${img.image})` }}
+                ></div>
+              ))}
           </div>
         </div>
       </div>

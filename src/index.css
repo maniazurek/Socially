@@ -46,6 +46,13 @@ code {
   margin-bottom: 17px;
 }
 
+.container_error {
+  color: tomato;
+  font-size: 10px;
+  margin-right: auto;
+  padding-left: 12px;
+}
+
 .container_form .container_form-element:first-child {
   margin-bottom: 11px;
 }
@@ -80,6 +87,7 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 .header {

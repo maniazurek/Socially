@@ -8,8 +8,6 @@ const Messages = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
   const userId = useSelector((store) => store.user.userId);
 
-  console.log(conversationsList);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

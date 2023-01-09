@@ -9,6 +9,7 @@ const Sign = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState("signin");
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const accessToken = useSelector((store) => store.user.accessToken);
 
@@ -23,11 +24,16 @@ const Sign = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    setIsFormSubmitted(true);
     if (mode === "signin") {
       dispatch(userLogin(login, password));
     } else {
       dispatch(userRegister(login, password));
     }
+  };
+
+  const modeToggle = (mode) => {
+    setMode(mode);
   };
 
   return (
@@ -52,13 +58,23 @@ const Sign = () => {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
+          {isFormSubmitted && !password && (
+            <span className="container_error">
+              * Please write your password *
+            </span>
+          )}
+          {isFormSubmitted && !login && (
+            <span className="container_error">
+              * Please write your login *
+            </span>
+          )}
           {mode === "signup" ? (
             <div className="sign_container">
               <MainButton type="submit">
                 <span>Register</span>
               </MainButton>
               <button
-                onClick={() => setMode("signin")}
+                onClick={() => modeToggle("signin")}
                 className="sign_change-mode"
               >
                 Or sign in
@@ -70,7 +86,7 @@ const Sign = () => {
                 <span>Login</span>
               </MainButton>
               <button
-                onClick={() => setMode("signup")}
+                onClick={() => modeToggle("signup")}
                 className="sign_change-mode"
               >
                 Or sign up
