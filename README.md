@@ -1,4 +1,4 @@
-# Technologies used in this project:
+# List of technologies used in project:
 
 - React
 - React Router
