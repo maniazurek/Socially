@@ -164,14 +164,21 @@ code {
   font-size: 12.8px;
   line-height: 19px;
   color: #656565;
-  top: 250px;
+  top: -55px;
   position: relative;
 }
 
-.send_button {
+/* .send_button {
   position: absolute;
   top: 182px;
   left: 264px;
+} */
+
+.send_button-message {
+  color: white;
+  position: absolute;
+  top: 672px;
+  left: 288px;
 }
 
 .section_container {
@@ -662,3 +669,22 @@ a:-webkit-any-link {
   margin-right: auto;
   max-width: 70%;
 }
+
+.section_container-message {
+  gap: 16px;
+  height: calc(100vh - 320px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message_screen {
+  height: calc(100vh - 280px);
+  overflow: hidden;
+  padding-bottom: 90px;
+}
+
+color: white;
+position: absolute;
+top: 672px;
+left: 288px;

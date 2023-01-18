@@ -27,12 +27,28 @@ const SingleMessage = () => {
   };
 
   return (
-    <div className="container_layout">
-      <h3 className="section_heading">Message to {conversation.interlocutors.find((user) => user._id !== userId).name.split(" ")[0]}</h3>
-      <div className="section_container">
+    <div className="container_layout message_screen">
+      <h3 className="section_heading">
+        Message to{" "}
+        {
+          conversation.interlocutors
+            .find((user) => user._id !== userId)
+            .name.split(" ")[0]
+        }
+      </h3>
+      <div className="section_container-message">
         {conversation.messages.map((message) => (
-          <div key={message._id} className={userId === message.author ? "single_message-A" : "single_message-B"}>{message.message}</div>
-        ))}       
+          <div
+            key={message._id}
+            className={
+              userId === message.author
+                ? "single_message-A"
+                : "single_message-B"
+            }
+          >
+            {message.message}
+          </div>
+        ))}
       </div>
       <form onSubmit={onFormSubmit}>
         <input
@@ -44,8 +60,13 @@ const SingleMessage = () => {
         ></input>
         <MainButton
           type="submit"
-          className="send_button"
-          style={{ color: "white" }}
+          className="send_button-message"
+          style={{
+            color: "white",
+            position: "absolute",
+            top: "672px",
+            left: "288px",
+          }}
         >
           <SendIcon style={{ transform: "rotate(-90deg)" }} />
         </MainButton>
