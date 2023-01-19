@@ -50,19 +50,30 @@ const Main = () => {
   const onLogOut = () => {
     navigate("/sign");
     window.scrollTo(0, 0);
-    dispatch(user.actions.setLogOut())
+    dispatch(user.actions.setLogOut());
   };
 
   const generateIconColor = (icon) => {
     if (location.pathname === "/" && icon === "feed") {
       return "#7DB9B3";
-    } else if (location.pathname === "/conversations" && icon === "conversations") {
+    } else if (
+      location.pathname.includes("/conversations") &&
+      icon === "conversations"
+    ) {
       return "#7DB9B3";
-    } else if (location.pathname === "/people" && icon === "people") {
+    } else if (
+      (location.pathname === "/people" && icon === "people") ||
+      (location.pathname !== `/people/${userId}` &&
+        location.pathname.includes("/people") &&
+        icon === "people")
+    ) {
+      return "#7DB9B3";
+    } else if (
+      location.pathname === `/people/${userId}` &&
+      icon === "profile"
+    ) {
       return "#7DB9B3";
     } else if (location.pathname === "/addpost" && icon === "addpost") {
-      return "#7DB9B3";
-    } else if (location.pathname === "/profile" && icon === "profile") {
       return "#7DB9B3";
     } else {
       return "#000";
@@ -94,7 +105,6 @@ const Main = () => {
         <Route path="addpost" element={<AddPost />} />
         <Route path="people" element={<People />} />
         <Route path="people/:userId" element={<SingleProfile />} />
-        {/* <Route path="profile" element={<Profile />} /> */}
       </Routes>
 
       <Paper
@@ -118,7 +128,9 @@ const Main = () => {
             to="/conversations"
             component={Link}
             icon={
-              <ChatBubbleOutline htmlColor={generateIconColor("conversations")} />
+              <ChatBubbleOutline
+                htmlColor={generateIconColor("conversations")}
+              />
             }
           />
           <BottomNavigationAction

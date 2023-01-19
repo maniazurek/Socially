@@ -25,29 +25,31 @@ const AddPost = () => {
     <div className="container_layout">
       <div className="section_container-addpost">
         <form onSubmit={onFormSubmit}>
-            <label htmlFor="image">
-              <input
-                className="section_container-input"
-                type="file"
-                onChange={onImageChange}
-                id="image"
-                accept="image/*"
-              />
-              <img
-                src={
-                  image
-                    ? URL.createObjectURL(image)
-                    : ""
-                }
-                alt="Preview"
-                className={image ? "section_container-element" : "section_container-element-add"}
-                style={{ marginBottom: "41px", marginTop: "0" }}
-              />
-            </label>
+          <label htmlFor="image">
+            <input
+              className="section_container-input"
+              type="file"
+              onChange={onImageChange}
+              id="image"
+              accept="image/*"
+            />
+            <img
+              src={
+                image ? URL.createObjectURL(image) : "/assets/addpost_placeholder.jpeg"
+              }
+              alt="Preview"
+              className={
+                image
+                  ? "section_container-element"
+                  : "section_container-element-add"
+              }
+              style={{ marginBottom: "41px", marginTop: "0" }}
+            />
+          </label>
           <div className="section_container-button">
-          <MainButton type="submit">
-            <span>Upload</span>
-          </MainButton>
+            <MainButton type="submit">
+              <span>Upload</span>
+            </MainButton>
           </div>
         </form>
       </div>

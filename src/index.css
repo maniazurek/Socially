@@ -164,22 +164,8 @@ code {
   font-size: 12.8px;
   line-height: 19px;
   color: #656565;
-  top: -55px;
   position: relative;
   left: 5px;
-}
-
-/* .send_button {
-  position: absolute;
-  top: 182px;
-  left: 264px;
-} */
-
-.send_button-message {
-  color: white;
-  position: absolute;
-  top: 672px;
-  left: 288px;
 }
 
 .section_container {
@@ -211,6 +197,7 @@ code {
   position: relative;
   padding: 124px 126px 124px 124px;
   color: transparent;
+  padding: 0;
 }
 
 .container_data {
@@ -672,19 +659,21 @@ a:-webkit-any-link {
 
 .section_container-message {
   gap: 16px;
-  height: calc(100vh - 320px);
+  height: calc(100vh - 395px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
 .message_screen {
-  height: calc(100vh - 280px);
   overflow: hidden;
-  padding-bottom: 90px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 205px);
 }
 
-color: white;
-position: absolute;
-top: 672px;
-left: 288px;
+.message__form {
+  margin-top: auto;
+  position: relative;
+}

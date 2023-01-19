@@ -50,7 +50,7 @@ const SingleMessage = () => {
           </div>
         ))}
       </div>
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="message__form">
         <input
           className="send_message-input"
           type="text"
@@ -64,8 +64,9 @@ const SingleMessage = () => {
           style={{
             color: "white",
             position: "absolute",
-            top: "672px",
-            left: "288px",
+            top: "13px",
+            left: "unset",
+            right: "17px",
           }}
         >
           <SendIcon style={{ transform: "rotate(-90deg)" }} />
