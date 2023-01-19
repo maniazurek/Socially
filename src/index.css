@@ -166,6 +166,7 @@ code {
   color: #656565;
   top: -55px;
   position: relative;
+  left: 5px;
 }
 
 /* .send_button {
@@ -324,7 +325,6 @@ code {
   background-position: center;
   width: 16.67px;
   height: 15.29px;
-  color: #ffffff;
   background-color: transparent;
   border: none;
   background-repeat: no-repeat;
