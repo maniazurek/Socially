@@ -6,8 +6,8 @@ import LikeButton from "../styled-components/LikeButton";
 import UnlikeButton from "../styled-components/UnlikeButton";
 
 const FeedElement = ({ avatar, name, createdAt, imageURL, likes, feedId }) => {
-  const loggedInUser = useSelector((store) => store.user.usserId);
-  const dispatch = useDispatch;
+  const loggedInUserId = useSelector((store) => store.user.userId);
+  const dispatch = useDispatch();
 
   const toggleLike = (feedId) => {
     dispatch(likeFeed(feedId));
@@ -31,7 +31,7 @@ const FeedElement = ({ avatar, name, createdAt, imageURL, likes, feedId }) => {
         </div>
       </div>
       <div className="likes_container" onClick={() => toggleLike(feedId)}>
-        {likes.length == 0 ? <UnlikeButton /> : <LikeButton />}
+        {likes.includes(loggedInUserId) ? <LikeButton /> : <UnlikeButton />}
         <p className="likes_counter">{likes.length}</p>
       </div>
     </div>
