@@ -35,7 +35,9 @@ const AddPost = () => {
             />
             <img
               src={
-                image ? URL.createObjectURL(image) : "/assets/addpost_placeholder.jpeg"
+                image
+                  ? URL.createObjectURL(image)
+                  : "/assets/addpost_placeholder.jpeg"
               }
               alt="Preview"
               className={
