@@ -58,12 +58,12 @@ const Sign = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
           {isFormSubmitted && !password && (
-            <span className="container_error">
+            <span className="container_error-password">
               * Please write your password *
             </span>
           )}
           {isFormSubmitted && !login && (
-            <span className="container_error">
+            <span className="container_error-login">
               * Please write your login *
             </span>
           )}
