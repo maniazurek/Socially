@@ -46,13 +46,23 @@ code {
   margin-bottom: 17px;
 }
 
-.container_error {
+.container_error-login {
   color: tomato;
   font-size: 10px;
   margin-right: auto;
   padding-left: 12px;
   position: absolute;
   top: 23px;
+  left: 22px;
+}
+
+.container_error-password {
+  color: tomato;
+  font-size: 10px;
+  margin-right: auto;
+  padding-left: 12px;
+  position: absolute;
+  top: 35px;
   left: 22px;
 }
 
