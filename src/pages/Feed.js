@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getFeed } from "../reducers/feed";
-
 import FeedElement from "../components/FeedElement";
 
 const Feed = () => {

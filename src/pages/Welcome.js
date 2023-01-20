@@ -9,7 +9,12 @@ const Welcome = () => {
       <div className="container_form">
         <p className="container_paragraph">Welcome to</p>
         <h2 className="container_title">Socially</h2>
-        <img src={socially} style={{ width: "314px", height: "271px" }} />
+        <img
+          src={socially}
+          title="socially"
+          alt="socially"
+          style={{ width: "314px", height: "271px" }}
+        />
       </div>
     </>
   );

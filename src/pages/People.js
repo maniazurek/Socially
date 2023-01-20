@@ -2,7 +2,6 @@ import React from "react";
 import { getUsers } from "../reducers/profiles";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-
 import PeopleElement from "../components/PeopleElement";
 
 const People = () => {

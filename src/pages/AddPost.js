@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import MainButton from "../styled-components/MainButton";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-
 import { postFeed } from "../reducers/feed";
 
 const AddPost = () => {
@@ -39,6 +38,7 @@ const AddPost = () => {
                   ? URL.createObjectURL(image)
                   : "/assets/addpost_placeholder.jpeg"
               }
+              title="preview"
               alt="Preview"
               className={
                 image

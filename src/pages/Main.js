@@ -7,7 +7,6 @@ import People from "./People";
 import AddPost from "./AddPost";
 import SingleMessage from "./SingleMessage";
 import SingleProfile from "./SingleProfile";
-
 import {
   Home,
   ChatBubbleOutline,
@@ -21,7 +20,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-
 import user from "../reducers/user";
 
 const Main = () => {
