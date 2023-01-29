@@ -713,7 +713,7 @@ a:-webkit-any-link {
 }
 
 .message__form {
+  display: flex;
   margin-top: auto;
   position: relative;
-  display: flex;
 }
