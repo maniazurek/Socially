@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import Feed from "./Feed";
-import Messages from "./Messages";
-import People from "./People";
-import AddPost from "./AddPost";
-import SingleMessage from "./SingleMessage";
-import SingleProfile from "./SingleProfile";
 import {
   Home,
   ChatBubbleOutline,
@@ -15,11 +13,13 @@ import {
   AccountCircle,
 } from "@mui/icons-material";
 import { Paper } from "@mui/material";
-import { useLocation, useNavigate } from "react-router";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+
+import Feed from "./Feed";
+import Messages from "./Messages";
+import People from "./People";
+import AddPost from "./AddPost";
+import SingleMessage from "./SingleMessage";
+import SingleProfile from "./SingleProfile";
 import user from "../reducers/user";
 
 const Main = () => {

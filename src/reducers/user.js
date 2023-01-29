@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { batch } from "react-redux";
+
 import { BASE_API_URL } from "../utils/commons";
 
 const user = createSlice({

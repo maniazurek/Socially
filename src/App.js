@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 import Sign from "./pages/Sign";
 import Main from "./pages/Main";
 import Welcome from "./pages/Welcome";
-import Error from "./pages/Error";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <Route path="/*" element={<Main />} />
       <Route path="/welcome" element={<Welcome />} />
       <Route path="/sign" element={<Sign />} />
-      <Route path="/404" element={<Error />} />
+      <Route path="/404" element={<NotFound />} />
       <Route path="*" element={<Navigate to="/404" />} />
     </Routes>
   );

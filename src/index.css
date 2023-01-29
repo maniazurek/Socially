@@ -213,6 +213,11 @@ code {
   padding: 0;
 }
 
+.section_container-element-alt {
+  margin-top: 0px;
+  margin-bottom: 41px;
+}
+
 .container_data {
   margin-top: 43px;
   display: flex;
@@ -394,6 +399,22 @@ code {
   border-color: #7db9b3;
 }
 
+.element_details-text_extended {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #656565;
+  margin-top: 9px;
+  margin-bottom: 0;
+  border-radius: 10px;
+  min-width: 77.63px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
 .element_details-text_alt {
   font-family: "Poppins";
   font-style: normal;
@@ -419,6 +440,11 @@ code {
   border-radius: 33px;
   margin-bottom: 20px;
   border: none;
+  background-color: #e1f6f4;
+}
+
+.element_details-profile {
+  background-color: transparent;
 }
 
 a:-webkit-any-link {

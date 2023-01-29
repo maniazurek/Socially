@@ -1,4 +1,5 @@
 import React from "react";
+
 import socially from "../assets/socially.svg";
 
 const Welcome = () => {

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import MainButton from "../styled-components/MainButton";
 import SendIcon from "@mui/icons-material/Send";
+
+import MainButton from "../styled-components/MainButton";
 import { sendMessage } from "../reducers/conversations";
 
 const SingleMessage = () => {

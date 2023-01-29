@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import MainButton from "../styled-components/MainButton";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+
+import MainButton from "../styled-components/MainButton";
 import { postFeed } from "../reducers/feed";
 
 const AddPost = () => {
@@ -42,10 +43,9 @@ const AddPost = () => {
               alt="Preview"
               className={
                 image
-                  ? "section_container-element"
-                  : "section_container-element-add"
+                  ? "section_container-element section_container-element-alt"
+                  : "section_container-element-add section_container-element-alt"
               }
-              style={{ marginBottom: "41px", marginTop: "0" }}
             />
           </label>
           <div className="section_container-button">

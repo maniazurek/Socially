@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { BASE_API_URL } from "../utils/commons";
 
 const feed = createSlice({

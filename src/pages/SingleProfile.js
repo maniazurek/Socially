@@ -1,10 +1,10 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router";
+
+import { BASE_API_URL } from "../utils/commons";
 import { getUserData } from "../reducers/user";
 import { putUserName, putUserAvatar } from "../reducers/user";
-import { useNavigate, useParams } from "react-router";
-import { BASE_API_URL } from "../utils/commons";
 import { sendMessageFromProfile } from "../reducers/conversations";
 
 const SingleProfile = () => {
